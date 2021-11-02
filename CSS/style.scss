@@ -19,7 +19,9 @@ $anim_dur:3.7s;
 @mixin button{
     background: $colour-secondary; 
     padding: 0.5em; border-radius:$border_rad;
-    text-align: center; font-size: 1em; color: $back-clr; font-family: $font_body; border: none; font-style: bold;}
+    text-align: center; font-size: 1em; color: $back-clr; 
+    font-family: $font_body; 
+    border: none; font-style: bold;}
   
     /*keyframes et specificités sur le loading spinner*/
 
@@ -77,7 +79,7 @@ $anim_dur:3.7s;
      opacity:0;
 }
 }
-.animation_chargement {display: flex;flex-direction:column;}
+.animation_chargement {display: flex;flex-direction:column;
 span {
     font-family: $font_title; background-color: white; 
     font-weight: 2px;
@@ -87,8 +89,8 @@ span {
     border-right:10px solid white;
     opacity:0;
     animation: back $anim_dur forwards;
-}
-.bloc_page{width: 100%; position: center; cursor: pointer;}
+}}
+.bloc_page{width: 100%; position: center; cursor: pointer; font-family: $font_body;}
 
 .header__logo {margin-left: 10%; float: center; margin-right:10%; margin-bottom: 5%;
  img {width: 100%; }
@@ -96,16 +98,22 @@ span {
 
 
 .slogan {position:center; text-align: center;
-    font-family: $font_title; font-weight: bold;
-.zone_recherche{@include fontoption;
-    text-align:center; padding-top:2em; padding-bottom:2em; width: 100%; background-color: $back-clr; border: $border; border-top: solid 0.5px lightgray;
+    @include fontoption;
+    padding-top:2em; 
+    padding-bottom:2em; 
+    width: 100%; 
+    background-color: $back-clr; 
+    .zone_recherche{
+    border: $border; 
+    border-top: solid 1px lightgray;
+    background-color: lightgray;
+    padding-top:2em; 
+    padding-bottom:2em; 
+    width: 100%; 
 }
 }
-h1{ font-family: $font_title;
+h3{ font-weight: lighter;color:grey;
 }
-    h2 {
-        font-family: $font_body;
-    }
 
     .bouton {
         @include button;
