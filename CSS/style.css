@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*durée à modifier*/
 /*liste des mixins à utiliser*/
 /*keyframes et specificités sur le loading spinner*/
 .animation_chargement::before {
@@ -10,8 +11,8 @@
   overflow: hidden;
   background: #0b0b0b;
   opacity: 0;
-  -webkit-animation: back 3.7s forwards;
-          animation: back 3.7s forwards;
+  -webkit-animation: back 0.7s forwards;
+          animation: back 0.7s forwards;
 }
 
 .animation_chargement::after {
@@ -31,7 +32,7 @@
   width: 200px;
   height: 200px;
   margin: auto;
-  animation: spin 3.7s linear alternate-reverse forwards;
+  animation: spin 0.7s linear alternate-reverse forwards;
 }
 
 @-webkit-keyframes spin {
@@ -143,12 +144,13 @@
   border-left: 10px solid white;
   border-right: 10px solid white;
   opacity: 0;
-  -webkit-animation: back 3.7s forwards;
-          animation: back 3.7s forwards;
+  -webkit-animation: back 0.7s forwards;
+          animation: back 0.7s forwards;
 }
 
 .bloc_page {
   width: 100%;
+  margin: auto;
   position: center;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
@@ -163,10 +165,17 @@
 
 .header__logo img {
   width: 100%;
+  padding-bottom: 5%;
 }
 
 .slogan {
-  position: center;
+  background-color: rgba(195, 199, 193, 0.2);
+  border: 0.5px transparent none;
+  text-align: center;
+  padding-bottom: 10%;
+}
+
+form .recherche {
   text-align: center;
   color: black;
   font-weight: bold;
@@ -174,18 +183,12 @@
   text-decoration: none;
   width: 100%;
   padding-top: 2em;
-  padding-bottom: 2em;
   width: 100%;
-  background-color: #F2F2F2;
-}
-
-.slogan .zone_recherche {
+  padding-bottom: 2em;
+  background-color: rgba(195, 199, 193, 0.3);
   border: 0.5px transparent none;
-  border-top: solid 1px lightgray;
-  background-color: lightgray;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  width: 100%;
+  float: top;
+  border-top: solid 3px rgba(195, 199, 193, 0.8);
 }
 
 h3 {
@@ -200,7 +203,7 @@ h3 {
   border-radius: 15px 15px 15px 15px;
   text-align: center;
   font-size: 1em;
-  color: #F2F2F2;
+  color: white;
   font-family: "Roboto", sans-serif;
   border: none;
   font-style: bold;
@@ -210,7 +213,7 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 80%;
   height: 40%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -234,10 +237,9 @@ h3 {
 .fonctionnement ul li {
   border: 1px solid none;
   border-radius: 15px 15px 15px 15px;
-  margin-left: 0%;
   width: 100%;
   padding: 1em;
-  background-color: #F2F2F2;
+  background-color: rgba(195, 199, 193, 0.2);
   border: 0.5px transparent none;
   border-radius: 15px 15px 15px 15px;
   margin-bottom: 20px;
@@ -269,7 +271,7 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   display: inline-block;
-  background-color: #F2F2F2;
+  background-color: rgba(195, 199, 193, 0.2);
 }
 
 .restaurants ul {
@@ -330,7 +332,7 @@ h3 {
 }
 
 .page_menu {
-  background-color: #F2F2F2;
+  background-color: rgba(195, 199, 193, 0.2);
   padding-top: 10%;
   padding-right: 10%;
 }

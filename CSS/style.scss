@@ -2,12 +2,12 @@ $colour-primary: #9356DC;
 $colour-secondary: linear-gradient(#FF79DA,#9356DC);
 $colour-tertiary: #99E2D0;
 $colour-hovbutton:#9356DC;
-$back-clr:#F2F2F2;
+$back-clr:rgba($color: #c3c7c1, $alpha: 0.2);
 $font_title:'Shrikhand', cursive;
 $font_body:'Roboto', sans-serif;
 $border: 0.5px transparent none;
 $border_rad: 15px 15px 15px 15px;
-$anim_dur:3.7s;
+$anim_dur:0.7s;/*durée à modifier*/
 
 /*liste des mixins à utiliser*/
 @mixin border{border:1px solid none; border-radius: $border_rad;}
@@ -19,7 +19,8 @@ $anim_dur:3.7s;
 @mixin button{
     background: $colour-secondary; 
     padding: 0.5em; border-radius:$border_rad;
-    text-align: center; font-size: 1em; color: $back-clr; 
+    text-align: center; font-size: 1em;
+    color: white;
     font-family: $font_body; 
     border: none; font-style: bold;}
   
@@ -90,28 +91,28 @@ span {
     opacity:0;
     animation: back $anim_dur forwards;
 }}
-.bloc_page{width: 100%; position: center; cursor: pointer; font-family: $font_body;}
+.bloc_page{width: 100%; margin: auto;position: center; cursor: pointer; font-family: $font_body;}
 
 .header__logo {margin-left: 10%; float: center; margin-right:10%; margin-bottom: 5%;
- img {width: 100%; }
+ img {width: 100%; padding-bottom: 5%; }
 }
 
 
-.slogan {position:center; text-align: center;
+.slogan{
+    background-color: $back-clr; border: $border; 
+    text-align: center;
+    padding-bottom: 10%;
+}
+form .recherche
+{  
+   text-align: center;
     @include fontoption;
-    padding-top:2em; 
-    padding-bottom:2em; 
-    width: 100%; 
-    background-color: $back-clr; 
-    .zone_recherche{
-    border: $border; 
-    border-top: solid 1px lightgray;
-    background-color: lightgray;
-    padding-top:2em; 
-    padding-bottom:2em; 
-    width: 100%; 
+    padding-top:2em; width: 100%;
+    padding-bottom:2em;
+    background-color: rgba($color: #c3c7c1, $alpha: 0.3); border: $border; float: top;
+    border-top: solid 3px rgba($color: #c3c7c1, $alpha: 0.8);
 }
-}
+
 h3{ font-weight: lighter;color:grey;
 }
 
@@ -120,14 +121,29 @@ h3{ font-weight: lighter;color:grey;
             }
 .fonctionnement
 { 
-    display: flex;  width: 100%; height: 40%; flex-direction: column; margin-left:0%; margin-right: 20%; display: inline-block;
+    display: flex;
+    width: 80%; 
+    height: 40%; 
+    flex-direction: column; 
+    margin-left:0%; 
+    margin-right: 20%; 
+    display: inline-block;
     ul 
     {
-        list-style-type : none;  margin-left:0%; width: 100%; position: relative; justify-content: space-between;
+    list-style-type : none;  
+    margin-left:0%; 
+    width: 100%; 
+    position: relative; 
+    justify-content: space-between;
     
-                     li {
-                         @include border; margin-left:0%; width: 100%;
-    padding:1em; background-color: $back-clr; border:$border; border-radius: $border_rad; margin-bottom: 20px; transition: background-color 250ms;
+        li {
+            @include border;
+            width: 100%;
+    padding:1em;
+    background-color: $back-clr; 
+    border:$border; 
+    border-radius: $border_rad; 
+    margin-bottom: 20px; transition: background-color 250ms;
     &:hover {background-color: $colour-hovbutton;}
                         a {@include fontoption; 
         
