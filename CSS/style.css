@@ -1,11 +1,5 @@
 @charset "UTF-8";
 /*liste des mixins à utiliser*/
-.bloc_page {
-  width: 80%;
-  position: center;
-  cursor: pointer;
-}
-
 /*keyframes et specificités sur le loading spinner*/
 .animation_chargement::before {
   content: "";
@@ -153,21 +147,21 @@ span {
           animation: back 3.7s forwards;
 }
 
-.header_logo img {
-  background-color: #F2F2F2;
-  width: 60%;
-  height: 5%;
+.bloc_page {
+  width: 100%;
+  position: center;
+  cursor: pointer;
+}
+
+.header__logo {
+  margin-left: 10%;
   float: center;
   margin-right: 10%;
+  margin-bottom: 5%;
 }
 
-.photo {
-  height: 10%;
-}
-
-.photo img {
+.header__logo img {
   width: 100%;
-  height: 100%;
 }
 
 .slogan {
@@ -324,6 +318,16 @@ h2 {
 
 .restaurants ul a .far:hover {
   background-color: #9356DC;
+}
+
+/* caracteritiques des elements pur les pages des menus*/
+.photo {
+  height: 10%;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
 }
 
 .page_menu {
