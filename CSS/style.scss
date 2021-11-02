@@ -1,0 +1,216 @@
+$colour-primary: #9356DC;
+$colour-secondary: linear-gradient(#FF79DA,#9356DC);
+$colour-tertiary: #99E2D0;
+$colour-hovbutton:#9356DC;
+$back-clr:#F2F2F2;
+$font_title:'Shrikhand', cursive;
+$font_body:'Roboto', sans-serif;
+$border: 0.5px transparent none;
+$border_rad: 15px 15px 15px 15px;
+$anim_dur:3.7s;
+
+/*liste des mixins à utiliser*/
+@mixin border{border:1px solid none; border-radius: $border_rad;}
+@mixin fontoption{color:black; font-weight: bold;font-family: $font_body; text-decoration: none; width: 100%;}
+
+@mixin photo_page_menu{width: 100%;height:100%;}
+@mixin menuformat {background-color: $back-clr; width: 100%; display: flex; display: inline; border:$border; border-radius: 15px 0px 0px 0px;}
+
+@mixin button{
+    background: $colour-secondary; 
+    padding: 0.5em; border-radius:$border_rad;
+    text-align: center; font-size: 1em; color: $back-clr; font-family: $font_body; border: none; font-style: bold;}
+
+    .bloc_page{width: 80%; position: center; cursor: pointer;}
+    
+    /*keyframes et specificités sur le loading spinner*/
+
+    .animation_chargement::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10001;
+        overflow: hidden;
+        background: #0b0b0b;
+        opacity: 0;
+        animation: back $anim_dur forwards;
+          }
+    .animation_chargement::after{
+        border: 10px solid black;
+        border-radius: 50%;
+        z-index: 10002;
+        content: "";
+        position: absolute;
+        top:50%; bottom:50%; right: 50%; left:20%;
+        border-top:20px solid #2c3e50;
+        border-bottom:20px solid #e74ce7;
+        border-left:20px solid $colour-primary;
+        border-right:20px solid $colour-tertiary;
+        width:200px; height: 200px;
+        margin:auto;
+        animation:spin $anim_dur linear alternate-reverse forwards;
+    }
+    @keyframes spin {
+        0% { transform: translateX(0) rotate(0deg);opacity: 0;
+    }
+    10% { transform: translateX(0) rotate(360deg);opacity: 1;
+    }
+    40%{transform: translateX(0) rotate(0deg);
+    }
+    60%{transform: translateX(0) rotate(360deg);
+    }
+    95% { 
+        transform: translateX(-9999px) rotate(360deg);
+    }
+    100%{ transform: translateX(-9999px) rotate(0deg); opacity: 0;}
+}
+@keyframes back{
+    0% {
+        opacity:0;
+    }
+    2%{
+     opacity:1
+    } 
+    95%{
+     opacity:1;
+}
+    100%{
+     opacity:0;
+}
+}
+.animation_chargement {display: flex;flex-direction:column;}
+span {
+    font-family: $font_title; background-color: white; 
+    font-weight: 2px;
+    border-top:10px solid white;
+    border-bottom:10px solid white;
+    border-left:10px solid white;
+    border-right:10px solid white;
+    opacity:0;
+    animation: back $anim_dur forwards;
+}
+
+.header_logo img {background-color: $back-clr; width: 60%; height: 5%; float: center; margin-right:10%;}
+
+.photo{height: 10%;
+img{@include photo_page_menu;}}
+
+.slogan {position:center; text-align: center;
+    font-family: $font_title; font-weight: bold;
+.zone_recherche{@include fontoption;
+    text-align:center; padding-top:2em; padding-bottom:2em; width: 100%; background-color: $back-clr; border: $border; border-top: solid 0.5px lightgray;
+}
+}
+h1{ font-family: $font_title;
+}
+    h2 {
+        font-family: $font_body;
+    }
+
+    .bouton {
+        @include button;
+            }
+.fonctionnement
+{ 
+    display: flex;  width: 100%; height: 40%; flex-direction: column; margin-left:0%; margin-right: 20%; display: inline-block;
+    ul 
+    {
+        list-style-type : none;  margin-left:0%; width: 100%; position: relative; justify-content: space-between;
+    
+                     li {
+                         @include border; margin-left:0%; width: 100%;
+    padding:1em; background-color: $back-clr; border:$border; border-radius: $border_rad; margin-bottom: 20px; transition: background-color 250ms;
+    &:hover {background-color: $colour-hovbutton;}
+                        a {@include fontoption; 
+        
+           
+    .fas{ color:grey; margin-right: 10%; float: left; 
+    }
+}
+}
+}
+}
+.restaurants { width: 100%; display: flex; display: inline-block; background-color: $back-clr;
+    ul {
+        list-style-type : none;
+         a { 
+            @include border; float: left; margin-bottom: 15%;
+            @include fontoption; 
+            flex-direction: row;
+            background-color: white; 
+            padding-bottom: 2rem; 
+            width: 90%; 
+            text-align: bottom;
+                img 
+            {
+                     @include border; border-radius: $border_rad;
+                    width: 100%; float: left; height: 200px; }
+                .far 
+                {
+                    float: right; background-color: none; transition: background-color 250ms; height: 100%;width: 10%; margin-left: 50%;
+                    &:hover{background-color: $colour-hovbutton;}
+                }
+            }
+        }
+    }
+.page_menu {background-color: $back-clr; padding-top: 10%; padding-right: 10%;
+        .menu { display: flex;  width: 100%; height: 40%; flex-direction: column; margin-left:0%; margin-right: 20%; display: inline-block;
+                ul {list-style: none;
+            li {
+                @include border; margin-left:0%;
+                width: 100%;
+padding:1em; 
+background-color: white; 
+border:$border; 
+border-radius: $border_rad; 
+margin-bottom: 20px; 
+box-shadow:grey; display: flex; flex-direction: row;
+&:hover 
+{
+    &>.green_fill{ transform: scaleX(0.1);
+        &>.fas{transform:scale(1) rotate(90deg);}
+    }
+}
+}
+}
+}
+    }
+li .green_fill{background-color:$colour-tertiary; padding:20px; width: 100%; height: 100%;
+    transform:scaleX(0);  transform-origin: right 50%;
+    transition: transform 350ms ease-in-out;
+    &.fas { 
+        color:$colour-tertiary; 
+        padding-left:50px; padding-right:50px; display: block;
+        width: 100%; 
+        background-color: white; 
+        border:$border; 
+        border-radius: 30px 30px 30px 30px;
+        height: 10px;  width: 100%;
+        transform: scale(0) rotate(0deg);
+        transition: transform 330ms ease-in-out;
+        float: right;    
+    } }
+
+.page_menu .menu a {@include fontoption;}
+
+footer {
+        background-color:#19252F;
+        
+        ul {
+            list-style-type : none;
+        a {
+            color:white; text-decoration: none; font-family: $font_body; 
+        .fas{
+            padding-right:10%;
+        }
+    }
+}
+}
+        .logo_footer img {
+            color:rgba($color: white, $alpha:1.0);
+        } 
+        
+        .footer_important {
+            font-weight: bold;
+        }
