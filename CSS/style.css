@@ -149,7 +149,7 @@
 }
 
 .bloc_page {
-  width: 100%;
+  width: 95%;
   margin: auto;
   position: center;
   cursor: pointer;
@@ -234,35 +234,58 @@ h3 {
           justify-content: space-between;
 }
 
-.fonctionnement ul li {
+.fonctionnement li {
   border: 1px solid none;
   border-radius: 15px 15px 15px 15px;
-  width: 100%;
-  padding: 1em;
   background-color: rgba(195, 199, 193, 0.2);
   border: 0.5px transparent none;
   border-radius: 15px 15px 15px 15px;
   margin-bottom: 20px;
-  -webkit-transition: background-color 250ms;
-  transition: background-color 250ms;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.fonctionnement ul li:hover {
-  background-color: #9356DC;
+.fonctionnement li:hover > a .__hov {
+  opacity: 1;
 }
 
-.fonctionnement ul li a {
+.fonctionnement a {
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   width: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border: 0.5px transparent none;
+  border-radius: 15px 15px 15px 15px;
+  z-index: 1;
 }
 
-.fonctionnement ul li a .fas {
-  color: grey;
-  margin-right: 10%;
-  float: left;
+.fonctionnement a .fas {
+  margin-right: 5%;
+}
+
+.__hov {
+  position: absolute;
+  top: 0;
+  border: 0.5px transparent none;
+  width: 100%;
+  padding-right: 100%;
+  border-radius: 15px 15px 15px 15px;
+  overflow: hidden;
+  width: 100%;
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #e4d5f6;
+  z-index: -1;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
 }
 
 .restaurants {
