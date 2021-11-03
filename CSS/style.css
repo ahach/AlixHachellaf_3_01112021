@@ -161,11 +161,28 @@
   float: center;
   margin-right: 10%;
   margin-bottom: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .header__logo img {
   width: 100%;
   padding-bottom: 5%;
+}
+
+/*caracteristiques du header pour les pages de menu*/
+.header__logo i.fas {
+  float: left;
+  font-size: 2em;
+  padding-right: 5%;
+  padding-top: 5%;
+  margin-right: 5%;
+  height: 100%;
 }
 
 .slogan {
@@ -266,7 +283,7 @@ h3 {
 }
 
 .fonctionnement a .fas {
-  margin-right: 5%;
+  margin-left: 0%;
 }
 
 .__hov {
@@ -344,7 +361,7 @@ h3 {
   background-color: #9356DC;
 }
 
-/* caracteritiques des elements pur les pages des menus*/
+/* caracteritiques des elements pour les pages des menus*/
 .photo {
   height: 10%;
 }

@@ -96,10 +96,18 @@ span {
 
 .header__logo 
 {
-margin-left: 10%; float: center; margin-right:10%; margin-bottom: 5%;
+margin-left: 10%; float: center; margin-right:10%; margin-bottom: 5%; 
+display: flex; flex-direction:row;
  img {
 width: 100%; padding-bottom: 5%; }
 }
+/*caracteristiques du header pour les pages de menu*/
+.header__logo i.fas{
+    float: left; font-size: 2em;
+    padding-right: 5%; 
+    padding-top: 5%; 
+    margin-right: 5%;
+    height:100%;}
 
 .slogan
 {
@@ -158,7 +166,7 @@ h3
        position: relative; padding-top: 20px; padding-bottom: 20px; padding-right: 20px; border:$border; 
        border-radius: $border_rad; 
        z-index:1; 
-       .fas{margin-right: 5%;}
+       .fas{margin-left: 0%;}
     }
     .__hov{
         position: absolute; top: 0; border:$border; width: 100%; padding-right: 100%; border-radius: $border_rad; 
@@ -197,7 +205,8 @@ h3
             }
         }
     }
-    /* caracteritiques des elements pur les pages des menus*/
+    /* caracteritiques des elements pour les pages des menus*/
+
 .photo{height: 10%;
     img{@include photo_page_menu;}}
 .page_menu {background-color: $back-clr; padding-top: 10%; padding-right: 10%;
