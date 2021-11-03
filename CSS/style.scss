@@ -2,6 +2,7 @@ $colour-primary: #9356DC;
 $colour-secondary: linear-gradient(#FF79DA,#9356DC);
 $colour-tertiary: #99E2D0;
 $colour-hovbutton:#9356DC;
+$colour-hovheart:#FF79DA;
 $back-clr:rgba($color: #c3c7c1, $alpha: 0.2);
 $font_title:'Shrikhand', cursive;
 $font_body:'Roboto', sans-serif;
@@ -120,7 +121,7 @@ width: 90%; height: 50px; padding-bottom: 5%; margin-left:10%;}
     background-color: $back-clr; border: $border; 
     border-top: solid 3px rgba($color: #c3c7c1, $alpha: 0.8);
     text-align: center;
-    padding-bottom: 10%;}
+    padding-bottom: 10%;
 
 .zone_recherche
 {  
@@ -137,7 +138,7 @@ width: 90%; height: 50px; padding-bottom: 5%; margin-left:10%;}
     background-color:rgba($color: #c3c7c1, $alpha: .3);
 }
 .fas{margin-right:5%; margin-left: 15%;}
-}
+}}
 
 h3
 { font-weight: lighter;color:grey;
@@ -149,27 +150,26 @@ h3
 .fonctionnement
 { 
     display: flex;
-    width: 80%; 
+    width: 90%; 
     height: 40%; 
     flex-direction: column; 
     margin-left:0%; 
     margin-right: 20%; 
-    display: inline-block;
     ul 
     {
-    list-style-type : none;  
-    margin-left:0%; 
+    list-style-type : none;
+    margin-left:0%;
     width: 100%; 
     position: relative; 
-    justify-content: space-between;
+    justify-content: space-around; 
 }
 }   
     .fonctionnement li 
     {
      @include border;
-    background-color: $back-clr; 
+    background-color: $back-clr; float: left;width: 100%;
     border:$border; 
-    border-radius: $border_rad; margin-bottom: 20px;padding-top: 20px; padding-bottom: 20px;
+    border-radius: $border_rad; margin-bottom: 20px; display: flex; flex-direction: row;
     &:hover {
         &>a .__hov {
             opacity:1;
@@ -177,15 +177,16 @@ h3
         }
     }    
      .fonctionnement a {
-       @include fontoption; width: 100%;
-       position: relative; 
-       padding-top: 20px; 
-       padding-bottom: 20px; 
-       padding-right: 20px; 
+       @include fontoption; width: 100%; padding-left:10%; float: left;
+       position: relative; text-align: left;
+       padding-top: 20px;  padding-left:1%;
+       padding-bottom: 20px; width:100%;
        border:$border; 
        border-radius: $border_rad; 
        z-index:1; 
-       .fas{margin-left: 0%; margin-right:5%;}
+       .fas{margin-left: 0%;
+        margin-right:5%;
+    }
     }
     .__hov{
         position: absolute; top: 0; border:$border; width: 100%; 
@@ -201,6 +202,8 @@ h3
         z-index: -1;
         transition: all opacity 250ms;
     }
+    .fonctionnement .number{background-color: $colour-primary; border:$border; padding:3px; width: 5%;
+        border-radius:20px 20px 20px 20px; float: left; margin-right: 10%; color:white;}
 
 .restaurants { 
     width: 100%; 
@@ -232,15 +235,22 @@ h3
                 .far 
                 {
                 float: right; color:grey;
-                background-color: none;
                 width: 10%; margin-top:5%;
-                transition: background-color 250ms; 
-                    &:hover{background-color: $colour-hovbutton;}
-                }
+                  &:hover {
+                      .fill
+                        {
+                        transform:scaleY(1);}
+            }
             }
         }
-    }
-}
+        }
+        }
+        }
+.restaurant .far .fill{
+    background-color: $colour-hovheart;
+    transform:scaleY(0);
+    transition: transform 2000ms; }
+
     /* caracteritiques des elements pour les pages des menus*/
 
 .photo{height: 10%;
@@ -287,8 +297,8 @@ li .green_fill{background-color:$colour-tertiary; padding:20px; width: 100%; hei
 
 footer {
         background-color:#19252F;
-        
-        ul {
+        img{color: white;}
+                ul {
             list-style-type : none;
         a {
             color:white; text-decoration: none; font-family: $font_body; 
@@ -297,11 +307,7 @@ footer {
         }
     }
 }
-}
-        .logo_footer img {
-            color:rgba($color: white, $alpha:1.0);
-        } 
-        
+} 
         .footer_important {
             font-weight: bold;
         }
