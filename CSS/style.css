@@ -133,6 +133,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 20px;
 }
 
 .animation_chargement span {
@@ -157,10 +158,8 @@
 }
 
 .header__logo {
-  margin-left: 10%;
   float: center;
   margin-right: 10%;
-  margin-bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,44 +167,63 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 5%;
 }
 
 .header__logo img {
-  width: 100%;
+  width: 90%;
+  height: 50px;
   padding-bottom: 5%;
+  margin-left: 10%;
 }
 
 /*caracteristiques du header pour les pages de menu*/
 .header__logo i.fas {
   float: left;
   font-size: 2em;
-  padding-right: 5%;
-  padding-top: 5%;
-  margin-right: 5%;
+  margin-bottom: 5%;
   height: 100%;
 }
 
+/*fin du header pour les pages*/
 .slogan {
   background-color: rgba(195, 199, 193, 0.2);
   border: 0.5px transparent none;
+  border-top: solid 3px rgba(195, 199, 193, 0.8);
   text-align: center;
   padding-bottom: 10%;
 }
 
-form .recherche {
-  text-align: center;
+.zone_recherche {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+  background-color: rgba(195, 199, 193, 0.3);
+}
+
+.zone_recherche .recherche {
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   width: 100%;
-  padding-top: 2em;
-  width: 100%;
-  padding-bottom: 2em;
+  border: none;
   background-color: rgba(195, 199, 193, 0.3);
-  border: 0.5px transparent none;
-  float: top;
-  border-top: solid 3px rgba(195, 199, 193, 0.8);
+}
+
+.zone_recherche .fas {
+  margin-right: 5%;
+  margin-left: 15%;
 }
 
 h3 {
@@ -264,6 +282,8 @@ h3 {
 
 .fonctionnement li:hover > a .__hov {
   opacity: 1;
+  -webkit-transform: 8px 8px 12px #aaa;
+          transform: 8px 8px 12px #aaa;
 }
 
 .fonctionnement a {
@@ -284,6 +304,7 @@ h3 {
 
 .fonctionnement a .fas {
   margin-left: 0%;
+  margin-right: 5%;
 }
 
 .__hov {
@@ -291,18 +312,19 @@ h3 {
   top: 0;
   border: 0.5px transparent none;
   width: 100%;
-  padding-right: 100%;
+  padding-right: 77rem;
   border-radius: 15px 15px 15px 15px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   overflow: hidden;
-  width: 100%;
   opacity: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: #e4d5f6;
   z-index: -1;
-  -webkit-transition: opacity 250ms;
-  transition: opacity 250ms;
+  -webkit-transition: all opacity 250ms;
+  transition: all opacity 250ms;
 }
 
 .restaurants {
@@ -318,11 +340,15 @@ h3 {
   list-style-type: none;
 }
 
-.restaurants ul a {
+.restaurants ul li {
+  margin-left: 0;
+}
+
+.restaurants ul li a {
   border: 1px solid none;
   border-radius: 15px 15px 15px 15px;
   float: left;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -333,31 +359,46 @@ h3 {
       -ms-flex-direction: row;
           flex-direction: row;
   background-color: white;
-  padding-bottom: 2rem;
-  width: 90%;
+  width: 100%;
+  margin-right: 5%;
   text-align: bottom;
 }
 
-.restaurants ul a img {
+.restaurants ul li a img {
   border: 1px solid none;
   border-radius: 15px 15px 15px 15px;
   border-radius: 15px 15px 15px 15px;
   width: 100%;
   float: left;
-  height: 200px;
+  height: 150px;
 }
 
-.restaurants ul a .far {
+.restaurants ul li a .span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.restaurants ul li a p {
+  font-weight: lighter;
+}
+
+.restaurants ul li a .far {
   float: right;
+  color: grey;
   background-color: none;
+  width: 10%;
+  margin-top: 5%;
   -webkit-transition: background-color 250ms;
   transition: background-color 250ms;
-  height: 100%;
-  width: 10%;
-  margin-left: 50%;
 }
 
-.restaurants ul a .far:hover {
+.restaurants ul li a .far:hover {
   background-color: #9356DC;
 }
 

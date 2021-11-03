@@ -7,11 +7,17 @@ $font_title:'Shrikhand', cursive;
 $font_body:'Roboto', sans-serif;
 $border: 0.5px transparent none;
 $border_rad: 15px 15px 15px 15px;
+$box-shad:8px 8px 12px #aaa;
 $anim_dur:0.7s;/*durée à modifier*/
 
 /*liste des mixins à utiliser*/
 @mixin border{border:1px solid none; border-radius: $border_rad;}
-@mixin fontoption{color:black; font-weight: bold;font-family: $font_body; text-decoration: none; width: 100%;}
+@mixin fontoption{
+    color:black; 
+    font-weight: bold;
+    font-family: $font_body; 
+    text-decoration: none; 
+    width: 100%;}
 
 @mixin photo_page_menu{width: 100%;height:100%;}
 @mixin menuformat {background-color: $back-clr; width: 100%; display: flex; display: inline; border:$border; border-radius: 15px 0px 0px 0px;}
@@ -80,7 +86,7 @@ $anim_dur:0.7s;/*durée à modifier*/
      opacity:0;
     }
     }
-.animation_chargement {display: flex;flex-direction:column;
+.animation_chargement {display: flex;flex-direction:column; height: 20px;
 span {
     font-family: $font_title; background-color: white; 
     font-weight: 2px;
@@ -96,33 +102,41 @@ span {
 
 .header__logo 
 {
-margin-left: 10%; float: center; margin-right:10%; margin-bottom: 5%; 
-display: flex; flex-direction:row;
+float: center; margin-right:10%;
+display: flex; flex-direction:row; 
+height: 5%;
  img {
-width: 100%; padding-bottom: 5%; }
+width: 90%; height: 50px; padding-bottom: 5%; margin-left:10%;}
 }
 /*caracteristiques du header pour les pages de menu*/
 .header__logo i.fas{
     float: left; font-size: 2em;
-    padding-right: 5%; 
-    padding-top: 5%; 
-    margin-right: 5%;
+   margin-bottom: 5%;
     height:100%;}
+    /*fin du header pour les pages*/
 
 .slogan
 {
     background-color: $back-clr; border: $border; 
-    text-align: center;
-    padding-bottom: 10%;
-}
-form .recherche
-{  
-   text-align: center;
-    @include fontoption;
-    padding-top:2em; width: 100%;
-    padding-bottom:2em;
-    background-color: rgba($color: #c3c7c1, $alpha: 0.3); border: $border; float: top;
     border-top: solid 3px rgba($color: #c3c7c1, $alpha: 0.8);
+    text-align: center;
+    padding-bottom: 10%;}
+
+.zone_recherche
+{  
+ display: flex;
+ flex-direction:row;
+ justify-content: stretch;
+ padding-bottom:1em;
+ padding-right: 1em;
+ padding-top:1em;
+ background-color: rgba($color: #c3c7c1, $alpha: 0.3);
+ .recherche { 
+    @include fontoption; 
+    border:none; 
+    background-color:rgba($color: #c3c7c1, $alpha: .3);
+}
+.fas{margin-right:5%; margin-left: 15%;}
 }
 
 h3
@@ -157,54 +171,76 @@ h3
     border:$border; 
     border-radius: $border_rad; margin-bottom: 20px;padding-top: 20px; padding-bottom: 20px;
     &:hover {
-    &>a .__hov {
-        opacity:1;}
-    }
+        &>a .__hov {
+            opacity:1;
+        transform: $box-shad;}
+        }
     }    
      .fonctionnement a {
        @include fontoption; width: 100%;
-       position: relative; padding-top: 20px; padding-bottom: 20px; padding-right: 20px; border:$border; 
+       position: relative; 
+       padding-top: 20px; 
+       padding-bottom: 20px; 
+       padding-right: 20px; 
+       border:$border; 
        border-radius: $border_rad; 
        z-index:1; 
-       .fas{margin-left: 0%;}
+       .fas{margin-left: 0%; margin-right:5%;}
     }
     .__hov{
-        position: absolute; top: 0; border:$border; width: 100%; padding-right: 100%; border-radius: $border_rad; 
+        position: absolute; top: 0; border:$border; width: 100%; 
+        padding-right: 77rem; 
+        border-radius: $border_rad; 
+        box-shadow:none;
         overflow:hidden;
-        width:100%;
         opacity:0;
         right: 0;
         bottom: 0;
         left: 0;
         background-color: lighten($colour-hovbutton, 30); 
         z-index: -1;
-        transition: opacity 250ms;
+        transition: all opacity 250ms;
     }
 
-.restaurants { width: 100%; display: flex; display: inline-block; background-color: $back-clr;
+.restaurants { 
+    width: 100%; 
+    display: flex; 
+    display: inline-block; 
+    background-color: $back-clr;
     ul {
         list-style-type : none;
+        li{ margin-left: 0;
          a { 
-            @include border; float: left; margin-bottom: 15%;
+            @include border; 
+            float: left; 
+            margin-bottom: 10%;
             @include fontoption; 
             flex-direction: row;
             background-color: white; 
-            padding-bottom: 2rem; 
-            width: 90%; 
+            width: 100%; margin-right:5%;
             text-align: bottom;
                 img 
             {
-                     @include border; border-radius: $border_rad;
-                    width: 100%; float: left; height: 200px; 
+            @include border; 
+            border-radius: $border_rad;
+            width: 100%; 
+            float: left; 
+            height: 150px;
                 }
+                .span{display: flex;flex-direction: row;width: 100%;}
+                    p{font-weight: lighter;}
                 .far 
                 {
-                    float: right; background-color: none; transition: background-color 250ms; height: 100%;width: 10%; margin-left: 50%;
+                float: right; color:grey;
+                background-color: none;
+                width: 10%; margin-top:5%;
+                transition: background-color 250ms; 
                     &:hover{background-color: $colour-hovbutton;}
                 }
             }
         }
     }
+}
     /* caracteritiques des elements pour les pages des menus*/
 
 .photo{height: 10%;
