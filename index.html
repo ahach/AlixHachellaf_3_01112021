@@ -16,7 +16,6 @@
     <title>Ohmyfood_Accueil</title>
   </head>
   <body>
-     <div class ="bloc_page">
     <header>
       <div class="header__logo"><img src="images\logo\ohmyfood.png"></div>
     </header>
@@ -25,7 +24,7 @@
           <form class="zone_recherche">  <i class="fas fa-map-marker-alt"></i> 
         <input type ="text" class= "recherche" name ="recherche" value = "Paris, Belleville" id ="recherche" />
       </form>
-<h2>Reservez le menu qui vous convient</h2>
+<h2>Réservez le menu qui vous convient</h2>
   <h3>Découvrez des restaurants d'exception selectionnés par nos soins</h3>
           <form><input type="button" class="bouton" value="Explorer nos restaurants"/></form>
         </section>
@@ -41,16 +40,31 @@
     <section class="restaurants">
 <h2>Restaurants</h2>
 <ul>
-  <li><a href="page1_palettedugout.html"><img src="images\restaurants\palette_du_gout.jpg" alt="Palette du goût"><br/><span>La palette du goût<i class="far fa-heart"></i></span><p>Menilmontant</p></a></li>
-  <li><a href="page2_noteenchantee.html"><img src="images\restaurants\note_enchantée.jpg" alt="Note enchantée"><br/><span>La note enchantée <i class="far fa-heart"></i></span><p>Charonne</p></a></li>
-  <li><a href="page3_alafrancaise.html"><img src="images\restaurants\a_la_francaise.jpg" alt="A la Française"><br/><span>A la française <i class="far fa-heart"></i></span><p>Citée rouge</p></a></li>
-  <li><a href="page4_delicesdessens.html"><img src="images\restaurants\delices_des_sens.jpg" alt="Le délice des sens"><br/><span>Le délice des sens <i class="far fa-heart"></i></span><p>Folie-Méricourt</p></a></li>
+  <li><a href="page1_palettedugout.html">
+    <img src="images\restaurants\palette_du_gout.jpg" alt="Palette du goût">
+    <div class="new">Nouveau</div>
+    <div class="caption"><span>La palette du goût <br/> Menilmontant</span>
+      <i class="far fa-heart"></i></div></a></li>
+  <li><a href="page2_noteenchantee.html">
+    <img src="images\restaurants\note_enchantée.jpg" alt="Note enchantée">
+    <div class="new">Nouveau</div>
+    <div class="caption">
+    <span>La note enchantée <br/>Charonne</span>
+    <i class="far fa-heart"></i></div></a></li>
+  <li><a href="page3_alafrancaise.html">
+    <img src="images\restaurants\a_la_francaise.jpg" alt="A la Française">
+    <div class="caption">
+    <span>A la française <br/>Citée rouge</span>
+    <i class="far fa-heart"></i></div></a></li>
+  <li><a href="page4_delicesdessens.html">
+    <img src="images\restaurants\delices_des_sens.jpg" alt="Le délice des sens">
+    <div class="caption">
+    <span>Le délice des sens<br/>Folie-Méricourt</span><i class="far fa-heart"></i></div></a></li>
 </ul>
   </section>
+</main>
   <footer>
-    <div class="logo_footer">
-      <img src="C:\Users\alixp\OneDrive\Documents\GitHub\OC_P3_ohmyfood\images\logo\ohmyfood@2x.svg" alt="logo Ohmyfood">
-    </div>
+    <img class="logo_footer" src="images/logo/ohmyfood@2x.svg">
     <ul>
       <div class="footer_important">
       <li><a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
@@ -59,7 +73,6 @@
       <li><a href="contact@ohmyfood.com">Contact</a></li></div>
     </ul>
   </footer>
-  </main>
-</div>
+  
   </body>
 </html>

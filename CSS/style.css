@@ -149,32 +149,47 @@
           animation: back 0.7s forwards;
 }
 
-.bloc_page {
-  width: 95%;
-  margin: auto;
-  position: center;
+body {
+  width: 90%;
+  margin: 0px 10px;
+}
+
+header, main, footer {
+  max-width: 1440px;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
 }
 
 .header__logo {
-  float: center;
-  margin-right: 10%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: 5%;
 }
 
 .header__logo img {
-  width: 90%;
-  height: 50px;
-  padding-bottom: 5%;
-  margin-left: 10%;
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  float: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 25%;
 }
 
 /*caracteristiques du header pour les pages de menu*/
@@ -192,12 +207,19 @@
   border-top: solid 3px rgba(195, 199, 193, 0.8);
   text-align: center;
   padding-bottom: 10%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .slogan .zone_recherche {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -205,6 +227,8 @@
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
+  width: 50%;
+  margin-left: 25%;
   padding-bottom: 1em;
   padding-right: 1em;
   padding-top: 1em;
@@ -248,23 +272,27 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 40%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 0%;
-  margin-right: 20%;
 }
 
 .fonctionnement ul {
   list-style-type: none;
-  margin-left: 0%;
+  padding-left: 0;
   width: 100%;
   position: relative;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fonctionnement li {
@@ -286,8 +314,8 @@ h3 {
 
 .fonctionnement li:hover > a .__hov {
   opacity: 1;
-  -webkit-transform: 8px 8px 12px #aaa;
-          transform: 8px 8px 12px #aaa;
+  -webkit-transform: 0px 0px 10px 4px rgba 128 128 128/20%;
+          transform: 0px 0px 10px 4px rgba 128 128 128/20%;
 }
 
 .fonctionnement a {
@@ -308,12 +336,19 @@ h3 {
   width: 100%;
   border: 0.5px transparent none;
   border-radius: 15px 15px 15px 15px;
+  -webkit-box-shadow: 0px 0px 10px 4px rgba 128 128 128/20%;
+          box-shadow: 0px 0px 10px 4px rgba 128 128 128/20%;
   z-index: 1;
 }
 
 .fonctionnement a .fas {
-  margin-left: 0%;
+  margin-left: 8%;
+  color: grey;
   margin-right: 5%;
+}
+
+.fonctionnement a .fas a:hover {
+  color: #9356DC;
 }
 
 .__hov {
@@ -339,8 +374,10 @@ h3 {
 
 .fonctionnement .number {
   background-color: #9356DC;
+  position: absolute;
+  left: -15px;
   border: 0.5px transparent none;
-  padding: 1px;
+  padding: 4px;
   width: 2%;
   text-align: center;
   margin-bottom: 1%;
@@ -350,61 +387,84 @@ h3 {
   color: white;
 }
 
-@media all and (max-width: 480px) {
-  .fonctionnement .number {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 5%;
-  }
-}
-
 .restaurants {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: inline-block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background-color: rgba(195, 199, 193, 0.2);
+}
+
+.restaurants h2 {
+  margin-left: 2%;
 }
 
 .restaurants ul {
   list-style-type: none;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0;
 }
 
 .restaurants ul li {
-  margin-left: 0;
+  background-color: white;
+  width: 90%;
+  border: 1px solid none;
+  border-radius: 15px 15px 15px 15px;
+  margin-left: 2%;
+  margin-right: 2%;
+  -webkit-box-shadow: 0px 0px 10px 4px rgba 128 128 128/20%;
+          box-shadow: 0px 0px 10px 4px rgba 128 128 128/20%;
 }
 
 .restaurants ul li a {
-  border: 1px solid none;
-  border-radius: 15px 15px 15px 15px;
-  float: left;
   margin-bottom: 10%;
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   width: 100%;
-  -webkit-box-orient: horizontal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background-color: white;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  margin-right: 5%;
-  text-align: bottom;
+  position: relative;
 }
 
 .restaurants ul li a img {
-  border: 1px solid none;
-  border-radius: 15px 15px 15px 15px;
+  border: 0.5px transparent none;
   border-radius: 15px 15px 15px 15px;
   width: 100%;
-  float: left;
-  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 170px;
 }
 
-.restaurants ul li a .span {
+.restaurants ul li a .new {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: #99E2D0;
+  color: rgba(28, 41, 36, 0.5);
+}
+
+.restaurants ul li a .caption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -412,18 +472,31 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
-.restaurants ul li a p {
-  font-weight: lighter;
+.restaurants ul li a .caption .span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 10%;
 }
 
 .restaurants ul li a .far {
-  float: right;
   color: grey;
-  font-size: 30px;
-  width: 20%;
+  font-size: 25px;
+  margin-right: 10%;
+  font-weight: 2px;
 }
 
 .restaurants .far::after {
@@ -569,7 +642,8 @@ footer {
 }
 
 footer img {
-  color: white;
+  width: 150px;
+  height: 50px;
 }
 
 footer ul {
@@ -588,5 +662,45 @@ footer ul a .fas {
 
 .footer_important {
   font-weight: bold;
+}
+
+@media all and (max-width: 768px) {
+  body {
+    margin: 0;
+    width: 100%;
+  }
+  header, main, footer {
+    margin: 0;
+    max-width: 768px;
+  }
+  .header__logo {
+    float: center;
+    margin-top: 5%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header__logo img {
+    padding-bottom: 5%;
+    -o-object-fit: unset;
+       object-fit: unset;
+  }
+  .zone_recherche {
+    width: 100%;
+    margin-left: 0;
+  }
+  /*caracteristiques du header pour les pages de menu*/
+  .header__logo i.fas {
+    float: left;
+    font-size: 2em;
+    margin-bottom: 5%;
+    height: 100%;
+  }
+  /*fin du header pour les pages*/
+  .fonctionnement .number {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
