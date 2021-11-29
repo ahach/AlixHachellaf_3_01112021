@@ -8,8 +8,9 @@ $font_title:'Shrikhand', cursive;
 $font_body:'Roboto', sans-serif;
 $border: 0.5px transparent none;
 $border_rad: 20px 20px 20px 20px;
-$anim_dur:0.7s;/*durée à modifier*/
-$box-shad:rgba($color:#a1aaa7, $alpha: 0.2);
+$anim_dur:1.5s;
+$box-shad:0px 8px 28px rgba($color:#a1aaa7, $alpha: 0.2);
+$box-shad-hov:0px 8px 28px rgba($color:#a1aaa7, $alpha: 1);
 
 /*liste des mixins à utiliser*/
 @mixin border{border:1px solid none; border-radius: $border_rad;}
@@ -30,7 +31,7 @@ $box-shad:rgba($color:#a1aaa7, $alpha: 0.2);
     border-radius: 15px 0px 0px 0px;}
 
 @mixin button{
-    background: $colour-secondary; box-shadow: 0px 0px 8px 2px rgba($color:#a1aaa7, $alpha: 0.2);
+    background: $colour-secondary; box-shadow: $box-shad;
     padding: 1em; border-radius:25px 25px 25px 25px;
     text-align: center; font-size: 1em;
     color: white;
@@ -46,7 +47,7 @@ $box-shad:rgba($color:#a1aaa7, $alpha: 0.2);
             opacity:1;
         }
     }
-    /*spécificités du sode sur le loading spinner*/
+    /*spécificités du code sur le loading spinner*/
 .animation_chargement::before {
     content: "";
     position: absolute;
@@ -62,7 +63,7 @@ $box-shad:rgba($color:#a1aaa7, $alpha: 0.2);
     border: 10px solid black;
     border-radius: 50%;
     z-index: 10002;
-    content: "";
+    content: "loading";
     position: absolute;
     top:50%; bottom:50%; right: 50%; left:20%;
     border-top:20px solid #2c3e50;
@@ -169,8 +170,13 @@ h3
 }
 
     .bouton, ._commander {
-        @include button;}
-        ._commander{margin-left:30%; margin-bottom:20px;margin-right:30%; width:40%; padding:15px;}
+        @include button;
+        opacity:1;}
+        ._commander{margin-left:30%; margin-bottom:20px;margin-right:30%; width:40%;}
+        .bouton, ._commander{
+            &:hover{opacity:0.9;box-shadow: $box-shad-hov;  
+        }}
+                
 .fonctionnement
 { 
     display: flex;
@@ -189,21 +195,17 @@ h3
 }   
     .fonctionnement li 
     {
-     @include border;
+    
     float: left;
     width: 100%;
-    border:$border;
-    box-shadow: $box-shad;
-    border-radius: $border_rad;
     margin-bottom: 20px; 
     display: flex; 
     flex-direction: row;
     &:hover { 
-        &>a .__hov {
-            opacity:1;box-shadow: 0px 8px 28px;
+        &>a .__hov {opacity:1;
         }
         }
-}
+        }
        .fonctionnement a {
        @include fontoption; @include box-shad;
        width: 100%; 
@@ -218,19 +220,16 @@ h3
        width:100%;
        border:$border;
        border-radius: $border_rad;
-       z-index:1; 
-       box-shadow: $box-shad;
-       .fas{ 
+       z-index:1;  box-shadow: $box-shad;
+              .fas{ 
         margin-left: 8%;
         color: grey;
         margin-right:5%;
-        a:hover{color:$colour-primary;}
             }}
     .__hov{
         position: absolute; top: 0; border:$border; width: 100%; 
         border-radius: $border_rad; 
-        box-shadow:darken($box-shad,60);
-        overflow:hidden;
+        overflow:hidden;box-shadow: $box-shad-hov;
         opacity:0;
         right: 0;
         bottom: 0;
@@ -289,28 +288,27 @@ h3
                          justify-content: space-between; margin-top: 15px; height:20%;
                 span{padding-left:10px;padding-bottom:10px;
                     }}
-                    p{font-weight:1px;color:grey;margin-top:0;font-style: normal;}
-                .far 
-                {
-                 color:grey; font-size: 25px; margin-right: 10%; font-weight:2px;height: 20%; 
-                 opacity:1;
-                 transform:scaleY(0);}
-                 .far::after {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 2;
-                    overflow: hidden;
-                    background: #0b0b0b;
-                    opacity: 0;
-                    transform:scaleY(1)
-                      }
-                      &:hover{transition:all 2s ease-in-out}
-                }
-            }
-        }
-        }
+                    p{font-weight:1px;
+                    color:grey;
+                    margin-top:0;
+                    font-style: normal;
+                }}}}}
+                .restaurants .fa-heart {
+                    font-size: 2em;color: grey;
+                    padding:1em; font-weight: bold;position:relative;
+                                            }
+                 
+                        .fa-heart::before {
+                            overflow: hidden;position:absolute;
+                            transform:scaleY(0); display: block;
+                            transform-origin: bottom;
+                            font-family: 'FontAwesome'; content: '\f004'; font-weight:bold; font-size: 15px;color: #f00;
+transition: all 1.5s ease-in-out;
+                        }
+                         .fa-heart:hover::before{
+                            transform: color;
+                            cursor: pointer;
+                        }
 
     /* caracteristiques des elements pour les pages des menus*/
 
@@ -384,6 +382,5 @@ i.fas{
     float: left; font-size: 1.5em;color:black;
    margin-bottom: 15px;margin-right:20px;
     height:100%;}}
+}
     /*fin du header pour les pages*/
-        
-    }
