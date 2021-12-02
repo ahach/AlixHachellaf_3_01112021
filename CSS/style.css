@@ -36,7 +36,7 @@
   border: 10px solid black;
   border-radius: 50%;
   z-index: 10002;
-  content: "loading";
+  content: "";
   position: absolute;
   top: 50%;
   bottom: 50%;
@@ -167,18 +167,19 @@
 }
 
 body {
-  width: 90%;
-  margin: 0px auto;
+  margin: 0px 0px;
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  width: 100%;
+  max-width: 1920px;
 }
 
 header, main, footer {
-  max-width: 1024px;
-  margin: 0px auto;
+  margin: 0px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,15 +195,8 @@ header, main, footer {
 }
 
 h1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   font-size: 1.4em;
   font-weight: 900;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   margin-bottom: 0;
   width: 90%;
   margin-left: 5%;
@@ -226,8 +220,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 60%;
-  margin-left: 15%;
+  margin-left: 20%;
   margin-right: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,11 +254,10 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: justify;
+  text-align: center;
   border-top: solid 3px rgba(195, 199, 193, 0.8);
   text-align: center;
   padding-bottom: 10%;
-  width: 100%;
 }
 
 .slogan .zone_recherche {
@@ -279,7 +271,6 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
   padding-bottom: 1em;
   padding-top: 1em;
   background-color: rgba(195, 199, 193, 0.3);
@@ -291,7 +282,6 @@ h2 {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  width: 100%;
   color: #423d3d;
   border: none;
   background-color: rgba(255, 255, 255, 0);
@@ -301,6 +291,10 @@ h2 {
 .slogan .zone_recherche .fas {
   margin-right: 5%;
   margin-left: 15%;
+}
+
+.slogan h1 {
+  margin-left: 30px;
 }
 
 h3 {
@@ -362,7 +356,6 @@ h3 {
 .fonctionnement ul {
   list-style-type: none;
   padding-left: 0;
-  width: 100%;
   margin: 5px;
   position: relative;
   -ms-flex-pack: distribute;
@@ -375,26 +368,14 @@ h3 {
 .fonctionnement li {
   float: left;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.fonctionnement li:hover > a .__hov {
-  opacity: 1;
-}
-
-.fonctionnement a {
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  width: 100%;
   -webkit-box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
           box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
   width: 100%;
@@ -406,7 +387,6 @@ h3 {
   padding-top: 20px;
   padding-left: 1%;
   padding-bottom: 20px;
-  width: 100%;
   border: 0.5px transparent none;
   border-radius: 20px 20px 20px 20px;
   z-index: 1;
@@ -414,10 +394,14 @@ h3 {
           box-shadow: 0px 8px 28px rgba(161, 170, 167, 0.2);
 }
 
-.fonctionnement a .fas {
+.fonctionnement li .fas {
   margin-left: 8%;
   color: grey;
   margin-right: 5%;
+}
+
+.fonctionnement li .fas:hover > .__hov {
+  opacity: 1;
 }
 
 .__hov {
@@ -477,7 +461,6 @@ h3 {
 
 .restaurants ul {
   list-style-type: none;
-  width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -499,7 +482,6 @@ h3 {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  width: 100%;
   -webkit-box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
           box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
   display: -webkit-box;
@@ -568,34 +550,29 @@ h3 {
 }
 
 .restaurants .fa-heart {
-  font-size: 2em;
   color: grey;
-  padding: 1em;
-  font-weight: bold;
-  position: relative;
+  padding: 2em;
 }
 
-.fa-heart::before {
+.restaurants .fa-heart :hover > .heart_fill {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.heart_fill {
   overflow: hidden;
-  position: absolute;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  display: block;
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
-  font-family: 'FontAwesome';
-  content: '\f004';
   font-weight: bold;
-  font-size: 15px;
+  height: 100%;
+  width: 100%;
+  font-size: 2em;
+  z-index: 10;
   color: #f00;
   -webkit-transition: all 1.5s ease-in-out;
   transition: all 1.5s ease-in-out;
-}
-
-.fa-heart:hover::before {
-  -webkit-transform: color;
-          transform: color;
-  cursor: pointer;
 }
 
 /* caracteristiques des elements pour les pages des menus*/
@@ -690,9 +667,6 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-.page_menu .menu ul a {
   background-color: white;
   border: 1px solid none;
   border-radius: 20px 20px 20px 20px;
@@ -700,18 +674,12 @@ h3 {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  width: 100%;
   font-size: 1.2em;
   width: 100%;
   padding: 20px;
   padding-bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -720,18 +688,18 @@ h3 {
   margin-bottom: 20px;
 }
 
-.page_menu .menu ul a span {
+.page_menu .menu ul li span {
   width: 90%;
 }
 
-.page_menu .menu ul a span p {
+.page_menu .menu ul li span p {
   font-weight: 500;
   color: #423d3d;
   margin-top: 5px;
   font-size: 0.9em;
 }
 
-.page_menu .menu ul a .prix {
+.page_menu .menu ul li .prix {
   width: 10%;
   margin-top: 25px;
   font-size: 0.9em;
@@ -759,13 +727,13 @@ footer .footer_important {
           align-items: center;
 }
 
-footer a {
+footer li, footer a {
   color: white;
   text-decoration: none;
   font-weight: 400;
 }
 
-footer a .fas {
+footer li .fas, footer a .fas {
   margin-right: 25px;
   width: 1px;
   height: 0.1px;
@@ -777,11 +745,9 @@ footer a .fas {
 
 @media all and (max-width: 768px) {
   body {
-    margin: 0;
-    width: 100%;
+    max-width: 768px;
   }
   header, main, footer {
-    margin: 0;
     max-width: 768px;
   }
   .header__logo {
@@ -802,7 +768,6 @@ footer a .fas {
   }
   /*caracteristiques du header pour les pages de menu*/
   .header__logo {
-    margin-left: 5%;
     padding-top: 0;
     margin-top: 0;
   }
