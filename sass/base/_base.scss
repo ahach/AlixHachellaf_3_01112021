@@ -1,0 +1,23 @@
+body{
+    margin:0px 0px;
+    @include fontoption;
+    max-width: 1920px;}
+    header, main, footer{
+        margin:0px;align-content: center; width:100%;
+        display: flex; 
+        justify-content: stretch; flex-direction: column;
+        cursor: pointer;
+        font-family: $font_body;}
+        h1{ font-size: 1.4em;font-weight: 900;
+            margin-bottom:0;width: 90%;margin-left: 5%;
+             align-items: center;}
+        h2{color:grey;font-size: 1.2em;font-weight: 500;margin-left: 2px;}
+            .far{font-weight:1px;}
+           
+            @media all and (max-width: 768px)
+            {
+                body{max-width: 768px;}
+                header, main,footer{max-width:768px; }}
+                h3
+{ font-weight: lighter;color:grey;
+}
