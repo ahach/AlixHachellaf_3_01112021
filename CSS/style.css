@@ -19,6 +19,10 @@
 }
 
 /*spécificités du code sur le loading spinner*/
+.loader {
+  z-index: 1;
+}
+
 .animation_chargement::before {
   content: "";
   position: absolute;
@@ -550,55 +554,61 @@ h3 {
 }
 
 .restaurants .fa-heart {
-  color: grey;
-  padding: 2em;
+  position: relative;
 }
 
-.restaurants .fa-heart :hover > .heart_fill {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+.fa-heart:hover {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 
-.heart_fill {
-  overflow: hidden;
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
-  font-weight: bold;
-  height: 100%;
-  width: 100%;
-  font-size: 2em;
-  z-index: 10;
-  color: #f00;
-  -webkit-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;
+.fa-heart:hover::after {
+  opacity: 0;
+}
+
+.fa-heart:hover::before {
+  opacity: 1;
+}
+
+.fa-heart::after {
+  opacity: 1;
+  font-weight: 100;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
+
+.fa-heart::before {
+  opacity: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transition: opacity 400ms ease-out;
+  transition: opacity 400ms ease-out;
+  font-weight: 600;
 }
 
 /* caracteristiques des elements pour les pages des menus*/
-.page_menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-}
-
-.page_menu .photo {
+.photo {
   height: 10%;
 }
 
-.page_menu .photo img {
+.photo img {
   width: 100%;
   height: 100%;
 }
 
-.page_menu .menu {
+.menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -616,7 +626,7 @@ h3 {
   flex-direction: column;
 }
 
-.page_menu .menu h1 {
+.menu h1 {
   margin-left: 20px;
   font-family: "Shrikhand", cursive;
   -webkit-box-pack: stretch;
@@ -628,13 +638,13 @@ h3 {
   font-weight: 500;
 }
 
-.page_menu .menu h1 .far {
+.menu h1 .far {
   font-weight: 100;
   padding-left: 30px;
   color: #39393a;
 }
 
-.page_menu .menu .list_plat {
+.menu .list_plat {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -642,24 +652,23 @@ h3 {
   margin-right: 20px;
 }
 
-.page_menu .menu .list_plat h2 {
+.menu .list_plat h2 {
   margin-bottom: 5px;
 }
 
-.page_menu .menu .green_line {
+.menu .green_line {
   padding: 2px;
   width: 60px;
   background-color: #99E2D0;
   border: 0.5px transparent none;
 }
 
-.page_menu .menu ul {
+.menu ul {
   list-style: none;
-  width: 100%;
   padding-left: 0;
 }
 
-.page_menu .menu ul li {
+.menu ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -675,7 +684,6 @@ h3 {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   font-size: 1.2em;
-  width: 100%;
   padding: 20px;
   padding-bottom: 0;
   display: flex;
@@ -688,18 +696,18 @@ h3 {
   margin-bottom: 20px;
 }
 
-.page_menu .menu ul li span {
+.menu ul li span {
   width: 90%;
 }
 
-.page_menu .menu ul li span p {
+.menu ul li span p {
   font-weight: 500;
   color: #423d3d;
   margin-top: 5px;
   font-size: 0.9em;
 }
 
-.page_menu .menu ul li .prix {
+.menu ul li .prix {
   width: 10%;
   margin-top: 25px;
   font-size: 0.9em;
