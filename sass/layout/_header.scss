@@ -1,14 +1,26 @@
-.header__logo 
-            {
-            align-items: center; margin-left:20%; margin-right:20%;
-            display: flex;
-             img {
-            width: 100%; align-items: center;}
-            }
-            /*caracteristiques du header pour les pages de menu*/
 .header__logo {
-    i.fas{
-        float: left; font-size: 1.5em;color:black;
-       margin-bottom: 15px;margin-right:20px;
-        height:100%;}}
-        /*fin du header pour les pages*/
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10px;
+    display: flex;
+
+    img {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+/*caracteristiques du header pour les pages de menu*/
+.header__logo {
+    i.fas {
+        float: left;
+        font-size: 1.5em;
+        color: black;
+        margin-bottom: 15px;
+        margin-right: 20px;
+        height: 100%;
+    }
+}
+
+/*fin du header pour les pages*/
