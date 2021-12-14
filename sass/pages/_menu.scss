@@ -1,13 +1,39 @@
 /*caracteristiques du header pour les pages de menu*/
-.header__logo i.fas {
-    float: left;
-    font-size: 2em;
-    margin-bottom: 5%;
-    height: 100%;
+.loader {
+    z-index: -1;
 }
+
+header {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__logo {
+    justify-content: start;
+
+    a {
+        width: 10%;
+
+        .fa-arrow-left {
+            float: left;
+            color: grey;
+            font-size: 5em;
+            margin-bottom: 5%;
+            font-size: 2rem;
+        }
+    }
+
+    img {
+        padding-left: 10%;
+    }
+}
+
 
 /*fin du header pour les pages*/
 /* caracteristiques des elements pour les pages des menus*/
+
 .photo {
     height: 10%;
 
@@ -31,18 +57,21 @@
 
     h1 {
         margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
         font-family: $font_title;
-        justify-content: stretch;
         font-size: 2em;
-        margin-right: 20px;
         margin-bottom: 20px;
         font-weight: 500;
+        position: relative;
 
-        .far {
-            font-weight: 100;
-            padding-left: 30px;
-            color: #39393a;
+        .fa-heart {
+            position: absolute;
+            right: 10px;
+            color: grey;
+            font-weight: 400;
         }
+
     }
 
     .menu-deroulant {
@@ -61,26 +90,28 @@
             @include border;
             @include fontoption;
             font-size: 1.2em;
-            padding-top: 20px; padding-bottom: 20px;
             padding-bottom: 0;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             border: $border;
             border-radius: $border_rad;
-            margin-bottom: 20px; 
-            margin-left: 20%;
-            width:60%;
+            margin-bottom: 20px;
+            margin-left: 10%;
+            width: 80%;
         }
 
         li:hover {
-            &> .caption p{text-overflow: ellipsis;}
+            &>.caption p {
+                text-overflow: ellipsis;
+            }
+
             &>.green_fill {
                 transform: scaleX(1);
                 width: 30px;
 
-                &>.fas {
-                    transform: rotate(180deg);
+                &>.fa-check {
+                    transform: rotate(-360deg);
                 }
             }
         }
@@ -88,28 +119,28 @@
 
     li .green_fill {
         background-color: $colour-tertiary;
-        padding: 20px;
+        padding: 15px;
+        border: $border;
+        border-radius: $border_rad;
         width: 1px;
         height: 100%;
         transform: scaleX(0);
         transform-origin: right 50%;
         transition: transform 350ms ease-in-out;
+    }
 
-        &.fas {
-            color: $colour-tertiary; overflow: hidden;
-            padding-left: 50px;
-            padding-right: 50px;
-            display: block;
-            width: 100%; color: white;
-            background-color: white;
-            border: $border;
-            border-radius: 30px 30px 30px 30px;
-            height: 10px;
-            width: 100%;
-            transform: scale(0) rotate(0deg);
-            transition: transform 330ms ease-in-out;
-            float: right;
-        }
+    li .green_fill .fa-check {
+        overflow: hidden;
+        display: block;
+        padding: 8px;
+        width: 100%;
+        color: $colour-tertiary;
+        background-color: white;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        transform: rotate(0deg);
+        transition: transform 330ms ease-in-out;
     }
 
     span {
@@ -124,22 +155,26 @@
     }
 
     .prix {
-        width: 20%; margin-right: 0; float: right; text-align: right;
+        width: 20%;
+        margin-right: 0;
+        float: right;
+        text-align: right;
         margin-top: 25px;
         font-size: 0.9em;
     }
 }
 
-.sous-menu {
+.sous-menu {npm
     display: flex;
     flex-direction: column;
     list-style: none;
     padding-left: 0;
 
     &__caption {
-        animation: fadein $anim-dur-menu forwards;
+     
         @for $i from 1 through $num-caption {
-            &--#{$i} {
+            &--#{$i} {  
+                 animation: fadein $anim-dur-menu forwards;
                 animation-delay: $anim-delay * $i;
             }
 
@@ -153,11 +188,12 @@
     background-color: $colour-tertiary;
     border: $border;
 }
+
 /*caracteristiques du menu pour les plus petites résolutions*/
 @media all and (max-width: 768px) {
 
-    .menu-deroulant li
-    {
-    margin-left: 0;
-    width:100%;}
+    .menu-deroulant li {
+        margin-left: 0;
+        width: 100%;
+    }
 }
