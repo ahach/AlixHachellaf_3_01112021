@@ -1,17 +1,23 @@
 /*keyframes et specificités sur l'animation du menu déroulant */
 @keyframes fadein {
-    from {
+    0% {
+        transform: translateY(-9999);
         opacity: 0;
     }
 
-    to {
+    50% {
+        transform: translateY(0);
+        opacity: 0.5;}
+
+    100% {
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
 /*spécificités du code sur le loading spinner*/
 .loader {
-    z-index: 1;
+    z-index: -1;
 }
 
 .animation_chargement::before {
@@ -34,14 +40,14 @@
     position: absolute;
     top: 50%;
     bottom: 50%;
-    right: 50%;
-    left: 20%;
+    right: 60%;
+    left: 40%;
     border-top: 20px solid #2c3e50;
     border-bottom: 20px solid #e74ce7;
     border-left: 20px solid $colour-primary;
     border-right: 20px solid $colour-tertiary;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: auto;
     animation: spin $anim_dur linear alternate-reverse forwards;
 }

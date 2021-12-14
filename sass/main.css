@@ -2,25 +2,43 @@
 /*liste des mixins à utiliser*/
 /*keyframes et specificités sur l'animation du menu déroulant */
 @-webkit-keyframes fadein {
-  from {
+  0% {
+    -webkit-transform: translateY(-9999);
+            transform: translateY(-9999);
     opacity: 0;
   }
-  to {
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes fadein {
-  from {
+  0% {
+    -webkit-transform: translateY(-9999);
+            transform: translateY(-9999);
     opacity: 0;
   }
-  to {
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
 
 /*spécificités du code sur le loading spinner*/
 .loader {
-  z-index: 1;
+  z-index: -1;
 }
 
 .animation_chargement::before {
@@ -32,8 +50,8 @@
   overflow: hidden;
   background: #0b0b0b;
   opacity: 0;
-  -webkit-animation: back 1.5s forwards;
-          animation: back 1.5s forwards;
+  -webkit-animation: back 2s forwards;
+          animation: back 2s forwards;
 }
 
 .animation_chargement::after {
@@ -44,16 +62,16 @@
   position: absolute;
   top: 50%;
   bottom: 50%;
-  right: 50%;
-  left: 20%;
+  right: 60%;
+  left: 40%;
   border-top: 20px solid #2c3e50;
   border-bottom: 20px solid #e74ce7;
   border-left: 20px solid #9356DC;
   border-right: 20px solid #99E2D0;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   margin: auto;
-  animation: spin 1.5s linear alternate-reverse forwards;
+  animation: spin 2s linear alternate-reverse forwards;
 }
 
 @-webkit-keyframes spin {
@@ -166,12 +184,12 @@
   border-left: 10px solid white;
   border-right: 10px solid white;
   opacity: 0;
-  -webkit-animation: back 1.5s forwards;
-          animation: back 1.5s forwards;
+  -webkit-animation: back 2s forwards;
+          animation: back 2s forwards;
 }
 
 body {
-  margin: 0px 0px;
+  margin: auto;
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -179,7 +197,9 @@ body {
   max-width: 1920px;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   margin: 0px;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -224,7 +244,9 @@ h2 {
   body {
     max-width: 768px;
   }
-  header, main, footer {
+  header,
+  main,
+  footer {
     max-width: 768px;
   }
 }
@@ -234,7 +256,8 @@ h3 {
   color: grey;
 }
 
-.bouton, ._commander {
+.bouton,
+._commander {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-box-shadow: 0px 8px 28px rgba(161, 170, 167, 0.2);
@@ -258,10 +281,16 @@ h3 {
   width: 40%;
 }
 
-.bouton:hover, ._commander:hover {
+.bouton:hover,
+._commander:hover {
   opacity: 0.9;
   -webkit-box-shadow: 0px 8px 28px #a1aaa7;
           box-shadow: 0px 8px 28px #a1aaa7;
+}
+
+.fonctionnement ul .bouton {
+  padding: 10rem;
+  background-color: black;
 }
 
 .slogan {
@@ -323,6 +352,7 @@ h3 {
           align-items: center;
   margin-left: 20%;
   margin-right: 20%;
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -354,16 +384,19 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
+  width: 70%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 15px;
+  margin-left: 30%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .fonctionnement h1 {
@@ -373,8 +406,6 @@ h3 {
 
 .fonctionnement ul {
   list-style-type: none;
-  padding-left: 0;
-  margin: 5px;
   position: relative;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -384,8 +415,7 @@ h3 {
 }
 
 .fonctionnement li {
-  float: left;
-  width: 100%;
+  width: 50%;
   margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -396,7 +426,6 @@ h3 {
   text-decoration: none;
   -webkit-box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
           box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
-  width: 100%;
   padding-left: 10%;
   float: left;
   background-color: rgba(195, 199, 193, 0.2);
@@ -418,11 +447,11 @@ h3 {
   margin-right: 5%;
 }
 
-.fonctionnement li .fas:hover > .__hov {
+.fonctionnement li:hover > .__hov {
   opacity: 1;
 }
 
-.__hov {
+.fonctionnement li .__hov {
   position: absolute;
   top: 0;
   border: 0.5px transparent none;
@@ -443,7 +472,7 @@ h3 {
   transition: transform opacity 250ms, -webkit-transform opacity 250ms;
 }
 
-.fonctionnement .number {
+.fonctionnement li .fonctionnement .number {
   background-color: #9356DC;
   position: relative;
   margin-right: -12px;
@@ -468,34 +497,35 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   background-color: rgba(195, 199, 193, 0.2);
-}
-
-.restaurants h2 {
-  padding-left: 20px;
 }
 
 .restaurants ul {
   list-style-type: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-left: 0;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .restaurants ul li {
   background-color: white;
-  width: 90%;
+  width: 40%;
+  margin-right: 10px;
+  margin-bottom: 20px;
   border: 1px solid none;
   border-radius: 20px 20px 20px 20px;
 }
 
 .restaurants ul li a {
-  margin-bottom: 10%;
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -523,7 +553,7 @@ h3 {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 150px;
+  height: 200px;
 }
 
 .restaurants ul li a .new {
@@ -612,6 +642,99 @@ h3 {
   font-weight: 600;
 }
 
+/*caracteristiques du menu pour les plus petites résolutions*/
+@media all and (max-width: 768px) {
+  .fonctionnement {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 95%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 1%;
+    margin-right: 0;
+  }
+  .fonctionnement ul {
+    width: 95%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .fonctionnement .fonctionnement li {
+    width: 90%;
+  }
+  .fonctionnement .restaurants {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: rgba(195, 199, 193, 0.2);
+  }
+  .fonctionnement .restaurants h2 {
+    padding-left: 20px;
+  }
+  .fonctionnement .restaurants ul {
+    margin-left: 10px;
+  }
+  .fonctionnement .restaurants ul li {
+    background-color: white;
+    width: 90%;
+    border: 1px solid none;
+    border-radius: 20px 20px 20px 20px;
+  }
+}
+
+footer {
+  background-color: #39393a;
+}
+
+footer img {
+  width: 110px;
+  height: 60px;
+  padding-left: 20px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+footer .footer_important {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer li,
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+footer li .fas,
+footer a .fas {
+  margin-right: 25px;
+  width: 1px;
+  height: 0.1px;
+}
+
+.footer_important {
+  font-weight: bold;
+}
+
+.footer_secondaire li,
+.footer_secondaire a {
+  font-weight: 200;
+}
+
 /*caracteristiques du header pour les pages de menu*/
 .header__logo i.fas {
   float: left;
@@ -667,7 +790,7 @@ h3 {
   color: #39393a;
 }
 
-.menu .list_plat {
+.menu .menu-deroulant {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -675,23 +798,11 @@ h3 {
   margin-right: 20px;
 }
 
-.menu .list_plat h2 {
+.menu .menu-deroulant h2 {
   margin-bottom: 5px;
 }
 
-.menu .green_line {
-  padding: 2px;
-  width: 60px;
-  background-color: #99E2D0;
-  border: 0.5px transparent none;
-}
-
-.menu ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.menu ul li {
+.menu .menu-deroulant li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -707,7 +818,8 @@ h3 {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   font-size: 1.2em;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-bottom: 0;
   display: flex;
   flex-direction: row;
@@ -717,22 +829,126 @@ h3 {
   border: 0.5px transparent none;
   border-radius: 20px 20px 20px 20px;
   margin-bottom: 20px;
+  margin-left: 20%;
+  width: 60%;
 }
 
-.menu ul li span {
-  width: 90%;
+.menu .menu-deroulant li:hover > .caption p {
+  text-overflow: ellipsis;
 }
 
-.menu ul li span p {
+.menu .menu-deroulant li:hover > .green_fill {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  width: 30px;
+}
+
+.menu .menu-deroulant li:hover > .green_fill > .fas {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.menu li .green_fill {
+  background-color: #99E2D0;
+  padding: 20px;
+  width: 1px;
+  height: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right 50%;
+          transform-origin: right 50%;
+  -webkit-transition: -webkit-transform 350ms ease-in-out;
+  transition: -webkit-transform 350ms ease-in-out;
+  transition: transform 350ms ease-in-out;
+  transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
+}
+
+.menu li .green_fill.fas {
+  color: #99E2D0;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: block;
+  width: 100%;
+  color: white;
+  background-color: white;
+  border: 0.5px transparent none;
+  border-radius: 30px 30px 30px 30px;
+  height: 10px;
+  width: 100%;
+  -webkit-transform: scale(0) rotate(0deg);
+          transform: scale(0) rotate(0deg);
+  -webkit-transition: -webkit-transform 330ms ease-in-out;
+  transition: -webkit-transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
+  float: right;
+}
+
+.menu span {
+  width: 80%;
+}
+
+.menu span p {
   font-weight: 500;
   color: #423d3d;
   margin-top: 5px;
   font-size: 0.9em;
 }
 
-.menu ul li .prix {
-  width: 10%;
+.menu .prix {
+  width: 20%;
+  margin-right: 0;
+  float: right;
+  text-align: right;
   margin-top: 25px;
   font-size: 0.9em;
+}
+
+.sous-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+}
+
+.sous-menu__caption {
+  -webkit-animation: fadein 2s forwards;
+          animation: fadein 2s forwards;
+}
+
+.sous-menu__caption--1 {
+  -webkit-animation-delay: 0.66667s;
+          animation-delay: 0.66667s;
+}
+
+.sous-menu__caption--2 {
+  -webkit-animation-delay: 1.33333s;
+          animation-delay: 1.33333s;
+}
+
+.sous-menu__caption--3 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.green_line {
+  padding: 2px;
+  width: 60px;
+  background-color: #99E2D0;
+  border: 0.5px transparent none;
+}
+
+/*caracteristiques du menu pour les plus petites résolutions*/
+@media all and (max-width: 768px) {
+  .menu-deroulant li {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

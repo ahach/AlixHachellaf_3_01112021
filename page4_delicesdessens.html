@@ -1,92 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,900i"
-      rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Shrikhand&display=swap" 
+    rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="CSS\style.css"/>
+    <link rel="stylesheet" href="sass\main.css"/>
     <script src="https://kit.fontawesome.com/9efe5ec66f.js" crossorigin="anonymous"></script>
-    <title>Ohmyfood_delices_des_sens</title>
+    <title>Ohmyfood_palette_du_gout</title>
   </head>
   <body>
-    <div class ="bloc_page">
+    <div class="loader">
+    <div class="animation_chargement"></div></div>
+    
     <header>
-      <div class="header__logo">
-        <i class="fas fa-arrow-left"></i>
-        <img src="images\logo\ohmyfood.png"></div>
+      <div class="header__logo"><a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        <img src="public/images/logo/ohmyfood.png"></div>
     </header>
-    <main class= "page_menu">
+    
+<main>
   <section class="photo">
-    <img src="images/restaurants/delices_des_sens.jpg" alt="Le délice des sens"> 
+    <img src="public/images/restaurants/palette_du_gout.jpg" alt="Palette du goût"> 
         </section>
 <article class="menu">
-    <h1>Au delice des sens</h1>
-   <section class="Entrées">
-     <h2>Entrées</h2>
-<ul>
-  <li><a href="">Tartare de thon
-    Assaisonné au yuzu
-    25€
-    </a><div class="green_fill"><i class="fas fa-check"></i></div></li>
-  <li><a href="">Bouchée de homard croustillant 
-    Et sa farandole de petits légumes
-    35€</a><div class="green_fill"><i class="fas fa-check"></i></div></li>
-  <li><a href="">Velouté de cèpes 
-    Aux truffes
-    20€</a><div class="green_fill"><i class="fas fa-check"></i></div></li>
+  <h1>La note enchantée<i class="far fa-heart"></i></h1>
+   <section class="menu-deroulant">
+     <h2>ENTREES</h2><div class="green_line"></div>
+<ul class ="sous-menu">
+  <li class="sous-menu__caption--1"><span>Tartare de thon
+    
+    <p>Assaisonné au yuzu
+   </p></span><div class="prix">25€</div><div class="green_fill"><i class="fas fa-check"></i></div></li> 
+  <li class="sous-menu__caption--2"><span>Bouchée de homard croustillant
+    <p>
+      Et sa farandole de petits légumes</p></span><div class="prix">35€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
+  <li class="sous-menu__caption--3"><span>Velouté de cèpes 
+    <p>Aux truffes</p></span><div class="prix">20€</div><div class="green_fill"><i class="fas fa-check"></i></div></li> 
 </ul>
 </section>
-<section class="Plats">
-  <h2>Plats</h2>
-<ul>
-  <li><a href="">Poulet rôti aux herbes de Provence 
-    Et sa crème de truffe
-    40€
-    </a><div class="green_fill"><i class="fas fa-check"></i></div></li>
-  <li><a href="">Langouste rôtie 
-    Et ses légumes de saison
-    35€</a><div class="green_fill"><i class="fas fa-check"></i></div></li>
-  <li><a href="">Côte de boeuf Angus 
-    Et sa purée de panais
-    44€</a><div class="green_fill"><i class="fas fa-check"></i></div></li>
+<section class="menu-deroulant">
+  <h2>PLATS</h2><div class="green_line"></div>
+  <ul class ="sous-menu">
+  <li class="caption"><span>Poulet rôti aux herbes de Provence 
+    <p>
+      Et sa crème de truffe</p></span>
+    <div class="prix">40€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
+    <li class="caption"><span>Langouste rôtie
+   <p>Et ses légumes de saison
+    </p></span>
+   <div class="prix">35€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
+   <li class="caption"><span>Côte de boeuf Angus
+    <p>Et sa purée de panais</p></span>
+    <div class="prix">44€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
 </ul>
   </section>
-  <section class="Desserts">
-  <h2>Desserts</h2>
-<ul>
-  <li><a href="">Farandole de desserts du chef
-    18€
-    </a><div class="green_fill"><i class="fas fa-check"></i></div></li>
-  <li><a href="">Crème brulée 
-    Revisitée
-    22€</a><div class="green_fill"><i class="fas fa-check"></i></div></li>
-  <li><a href="">Tiramisu 
-    À la noisette
-    23€</a><div class="green_fill"><i class="fas fa-check"></i></div></li>
+  <section class="menu-deroulant">
+  <h2>DESSERTS</h2><div class="green_line"></div>
+  <ul class ="sous-menu">
+  <li class="caption"><span>Farandole de desserts du chef
+    <p></p></span>
+    <div class="prix">18€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
+    <li class="caption"><span>Crème brulée   
+    <p>Revisité</p></span><div class="prix">22€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
+    <li class="caption"><span>Tiramisu
+    <p>À la noisette</p></span>
+    <div class="prix">23€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
 </ul>
   </section>
-  <form><input type="button" class="bouton" value="Commander"</></form>
+  <form><input type="button" class="_commander" value="Commander"</></form>
 </article>
 </main>
-  <footer>
-    <div class="logo_footer">
-      <img src="C:\Users\alixp\OneDrive\Desktop\P3_Sass\OC_P3\images\logo\ohmyfood@2x.svg" alt="logo Ohmyfood">
-    </div>
-    <ul>
-      <div class="footer_important">
-      <li><a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-      <li><a href=""><i class="fas fa-hands-helping"></i>Devenez partenaire</a></li></div>
-      <div class="footer_secondaire"><li><a href="">Mentions légales</a></li>
-      <li><a href="">Contact</a></li></div><i class="far fa-heart"></i><i class="fas fa-check"></i>
-    </ul>
-  </footer>
+
+<footer>
+  <img class="logo_footer" src="public/images/logo/ohmyfood@2x.svg">
+  <ul>
+    <div class="footer_important">
+    <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+    <li><i class="fas fa-hands-helping"></i>Devenez partenaire</li></div>
+    <div class="footer_secondaire"><li>Mentions légales</li>
+    <li><a href="mailto:contact@ohmyfood.com">Contact</a></li></div>
+  </ul>
+</footer>
 </div>
   </body>
 </html>
