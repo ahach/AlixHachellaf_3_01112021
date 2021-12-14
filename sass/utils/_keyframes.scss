@@ -16,9 +16,7 @@
 }
 
 /*spécificités du code sur le loading spinner*/
-.loader {
-    z-index: -1;
-}
+
 
 .animation_chargement::before {
     content: "";
