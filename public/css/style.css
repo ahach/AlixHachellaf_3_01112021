@@ -1,41 +1,20 @@
 @charset "UTF-8";
 /*liste des mixins à utiliser*/
 /*keyframes et specificités sur l'animation du menu déroulant */
-@-webkit-keyframes fadein {
-  0% {
-    -webkit-transform: translateY(-9999);
-            transform: translateY(-9999);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 0.5;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
 @keyframes fadein {
   0% {
-    -webkit-transform: translateY(-9999);
-            transform: translateY(-9999);
+    transform: translateY(-9999);
     opacity: 0;
   }
   50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 0.5;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
-
 /*spécificités du code sur le loading spinner*/
 .animation_chargement::before {
   content: "";
@@ -46,8 +25,7 @@
   overflow: hidden;
   background: #0b0b0b;
   opacity: 0;
-  -webkit-animation: back 2s forwards;
-          animation: back 2s forwards;
+  animation: back 2s forwards;
 }
 
 .animation_chargement::after {
@@ -70,82 +48,29 @@
   animation: spin 2s linear alternate-reverse forwards;
 }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
-    opacity: 1;
-  }
-  40% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-  }
-  60% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
-  }
-  95% {
-    -webkit-transform: translateX(-9999px) rotate(360deg);
-            transform: translateX(-9999px) rotate(360deg);
-  }
-  100% {
-    -webkit-transform: translateX(-9999px) rotate(0deg);
-            transform: translateX(-9999px) rotate(0deg);
-    opacity: 0;
-  }
-}
-
 @keyframes spin {
   0% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
     opacity: 0;
   }
   10% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
+    transform: translateX(0) rotate(360deg);
     opacity: 1;
   }
   40% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
   }
   60% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
+    transform: translateX(0) rotate(360deg);
   }
   95% {
-    -webkit-transform: translateX(-9999px) rotate(360deg);
-            transform: translateX(-9999px) rotate(360deg);
+    transform: translateX(-9999px) rotate(360deg);
   }
   100% {
-    -webkit-transform: translateX(-9999px) rotate(0deg);
-            transform: translateX(-9999px) rotate(0deg);
+    transform: translateX(-9999px) rotate(0deg);
     opacity: 0;
   }
 }
-
-@-webkit-keyframes back {
-  0% {
-    opacity: 0;
-  }
-  2% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 @keyframes back {
   0% {
     opacity: 0;
@@ -161,18 +86,11 @@
     visibility: hidden;
   }
 }
-
 .animation_chargement {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 20px;
 }
-
 .animation_chargement span {
   font-family: "Shrikhand", cursive;
   background-color: white;
@@ -182,8 +100,7 @@
   border-left: 10px solid white;
   border-right: 10px solid white;
   opacity: 0;
-  -webkit-animation: back 2s forwards;
-          animation: back 2s forwards;
+  animation: back 2s forwards;
 }
 
 body {
@@ -199,19 +116,11 @@ header,
 main,
 footer {
   margin: 0px;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: stretch;
+  flex-direction: column;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
 }
@@ -227,9 +136,7 @@ h1 {
   margin-bottom: 0;
   width: 90%;
   margin-left: 5%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 h2 {
@@ -247,13 +154,13 @@ h2 {
   body {
     max-width: 768px;
   }
+
   header,
-  main,
-  footer {
+main,
+footer {
     max-width: 768px;
   }
 }
-
 h3 {
   font-weight: lighter;
   color: grey;
@@ -261,10 +168,8 @@ h3 {
 
 .bouton,
 ._commander {
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(#FF79DA, #9356DC);
-  -webkit-box-shadow: 10px 20px 20px rgba(161, 170, 167, 0.2);
-          box-shadow: 10px 20px 20px rgba(161, 170, 167, 0.2);
+  box-shadow: 10px 20px 20px rgba(161, 170, 167, 0.2);
   padding: 1em;
   border-radius: 25px 25px 25px 25px;
   text-align: center;
@@ -287,8 +192,7 @@ h3 {
 .bouton:hover,
 ._commander:hover {
   opacity: 0.9;
-  -webkit-box-shadow: 0px 8px 28px #a1aaa7;
-          box-shadow: 0px 8px 28px #a1aaa7;
+  box-shadow: 0px 8px 28px #a1aaa7;
 }
 
 .fonctionnement ul .bouton {
@@ -299,36 +203,22 @@ h3 {
 .slogan {
   background-color: rgba(195, 199, 193, 0.2);
   border: 1px transparent none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   text-align: center;
   border-top: solid 3px rgba(195, 199, 193, 0.8);
   text-align: center;
   padding-bottom: 10%;
 }
-
 .slogan .zone_recherche {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  justify-content: center;
+  flex-direction: row;
   padding-bottom: 1em;
   padding-top: 1em;
   background-color: rgba(195, 199, 193, 0.3);
   color: #423d3d;
 }
-
 .slogan .zone_recherche .recherche {
   color: black;
   font-weight: bold;
@@ -339,31 +229,22 @@ h3 {
   background-color: rgba(255, 255, 255, 0);
   width: 50%;
 }
-
 .slogan .zone_recherche .fas {
   margin-right: 5%;
   margin-left: 15%;
 }
-
 .slogan h1 {
   margin-left: 30px;
 }
 
 .header__logo {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .header__logo img {
   width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 /*caracteristiques du header pour les pages de menu*/
@@ -382,44 +263,25 @@ h3 {
 }
 
 .fonctionnement {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 95%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-direction: column;
   padding-top: 2%;
   padding-bottom: 2%;
 }
-
 .fonctionnement h1 {
   margin: 3px;
   padding-bottom: 20px;
 }
-
 .fonctionnement ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style-type: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   position: relative;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
 }
 
@@ -427,19 +289,13 @@ h3 {
   width: 45%;
   margin-right: 50px;
   margin-bottom: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  -webkit-box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
-          box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
+  box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
   float: left;
   background-color: rgba(195, 199, 193, 0.2);
   position: relative;
@@ -449,10 +305,8 @@ h3 {
   border: 1px transparent none;
   border-radius: 20px 20px 20px 20px;
   z-index: 1;
-  -webkit-box-shadow: 10px 20px 20px rgba(161, 170, 167, 0.2);
-          box-shadow: 10px 20px 20px rgba(161, 170, 167, 0.2);
+  box-shadow: 10px 20px 20px rgba(161, 170, 167, 0.2);
 }
-
 .fonctionnement li .number {
   background-color: #9356DC;
   position: relative;
@@ -466,18 +320,15 @@ h3 {
   font-weight: 400;
   color: white;
 }
-
 .fonctionnement li .fas {
   color: grey;
   padding-top: 2px;
   padding-right: 20px;
   padding-left: 20px;
 }
-
 .fonctionnement li:hover > .__hov {
   opacity: 1;
 }
-
 .fonctionnement li .__hov {
   position: absolute;
   top: 0;
@@ -485,48 +336,30 @@ h3 {
   width: 100%;
   border-radius: 20px 20px 20px 20px;
   overflow: hidden;
-  -webkit-box-shadow: 0px 8px 28px #a1aaa7;
-          box-shadow: 0px 8px 28px #a1aaa7;
+  box-shadow: 0px 8px 28px #a1aaa7;
   opacity: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: #e4d5f6;
   z-index: -1;
-  -webkit-transition: -webkit-transform opacity 250ms;
-  transition: -webkit-transform opacity 250ms;
   transition: transform opacity 250ms;
-  transition: transform opacity 250ms, -webkit-transform opacity 250ms;
 }
 
 .restaurants {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: rgba(195, 199, 193, 0.2);
 }
-
 .restaurants ul {
   list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding-left: 0;
 }
-
 .restaurants ul li {
   background-color: white;
   width: 40%;
@@ -535,38 +368,27 @@ h3 {
   border: 1px solid none;
   border-radius: 20px 20px 20px 20px;
 }
-
 .restaurants ul li a {
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  -webkit-box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
-          box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
   display: flex;
   border-radius: 20px 20px 20px 20px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   height: 20%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: relative;
 }
-
 .restaurants ul li a img {
   border: 1px transparent none;
   border-radius: 20px 20px 20px 20px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 200px;
 }
-
 .restaurants ul li a .new {
   position: absolute;
   top: 10px;
@@ -578,29 +400,18 @@ h3 {
   background-color: #99E2D0;
   color: rgba(28, 41, 36, 0.5);
 }
-
 .restaurants ul li a .caption {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 15px;
   height: 20%;
 }
-
 .restaurants ul li a .caption span {
   padding-left: 10px;
   padding-bottom: 10px;
 }
-
 .restaurants ul li a p {
   font-weight: 1px;
   color: grey;
@@ -618,7 +429,6 @@ h3 {
 }
 
 .fa-heart:hover {
-  -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
 }
 
@@ -633,27 +443,22 @@ h3 {
 .fa-heart::after {
   opacity: 1;
   font-weight: 100;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -webkit-transition: opacity 400ms ease-in;
+  align-self: center;
   transition: opacity 400ms ease-in;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  content: "";
+  content: "\f004";
 }
 
 .fa-heart::before {
   opacity: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-transition: opacity 400ms ease-out;
   transition: opacity 400ms ease-out;
   font-weight: 600;
 }
@@ -661,39 +466,26 @@ h3 {
 /*caracteristiques du menu pour les plus petites résolutions*/
 @media all and (max-width: 768px) {
   .fonctionnement {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 95%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-left: 1%;
     margin-right: 0;
   }
   .fonctionnement ul {
     width: 95%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    flex-direction: column;
+    box-sizing: border-box;
   }
   .fonctionnement li {
     width: 70%;
   }
+
   .restaurants {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: rgba(195, 199, 193, 0.2);
   }
   .restaurants h2 {
@@ -701,10 +493,7 @@ h3 {
   }
   .restaurants ul {
     margin-left: 10px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .restaurants ul li {
     background-color: white;
@@ -713,36 +502,28 @@ h3 {
     border-radius: 20px 20px 20px 20px;
   }
 }
-
 footer {
   background-color: #39393a;
 }
-
 footer img {
   width: 110px;
   height: 60px;
   padding-left: 20px;
 }
-
 footer ul {
   list-style-type: none;
   padding-left: 20px;
   margin-top: 0;
 }
-
 footer .footer_important {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 footer li,
 footer a {
   color: white;
   text-decoration: none;
   font-weight: 400;
 }
-
 footer li .fas,
 footer a .fas {
   margin-right: 25px;
@@ -766,28 +547,17 @@ footer a .fas {
 
 header {
   z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .header__logo {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  justify-content: start;
 }
-
 .header__logo a {
   width: 10%;
 }
-
 .header__logo a .fa-arrow-left {
   float: left;
   color: grey;
@@ -795,7 +565,6 @@ header {
   margin-bottom: 5%;
   font-size: 2rem;
 }
-
 .header__logo img {
   padding-left: 10%;
 }
@@ -805,19 +574,13 @@ header {
 .photo {
   height: 10%;
 }
-
 .photo img {
   width: 100%;
 }
 
 .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-left: 0%;
   background-color: #f2F2F2;
   margin-top: -12%;
@@ -825,49 +588,33 @@ header {
   display: flex;
   flex-direction: column;
 }
-
 .menu h1 {
   margin-left: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   font-family: "Shrikhand", cursive;
   font-size: 2em;
   margin-bottom: 20px;
   font-weight: 500;
   position: relative;
 }
-
 .menu h1 .fa-heart {
   position: absolute;
   right: 10px;
   color: grey;
   font-weight: 400;
 }
-
 .menu .menu-deroulant {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-left: 20px;
   margin-right: 20px;
 }
-
 .menu .menu-deroulant h2 {
   margin-bottom: 5px;
 }
-
 .menu .menu-deroulant li {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   background-color: white;
   border: 1px solid none;
   border-radius: 20px 20px 20px 20px;
@@ -879,29 +626,21 @@ header {
   padding-bottom: 0;
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   border: 1px transparent none;
   border-radius: 20px 20px 20px 20px;
   margin-bottom: 20px;
 }
-
 .menu .menu-deroulant li:hover > .caption span {
   text-overflow: ellipsis;
 }
-
 .menu .menu-deroulant li:hover > .green_fill {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
   width: 30px;
 }
-
 .menu .menu-deroulant li:hover > .green_fill > .fa-check {
-  -webkit-transform: rotate(-360deg);
-          transform: rotate(-360deg);
+  transform: rotate(-360deg);
 }
-
 .menu li .green_fill {
   background-color: #99E2D0;
   padding: 15px;
@@ -909,16 +648,10 @@ header {
   border-radius: 20px 20px 20px 20px;
   width: 1px;
   height: 100%;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: right 50%;
-          transform-origin: right 50%;
-  -webkit-transition: -webkit-transform 350ms ease-in-out;
-  transition: -webkit-transform 350ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right 50%;
   transition: transform 350ms ease-in-out;
-  transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
 }
-
 .menu li .green_fill .fa-check {
   overflow: hidden;
   display: block;
@@ -929,27 +662,19 @@ header {
   border-radius: 50%;
   height: 100%;
   width: 100%;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transition: -webkit-transform 330ms ease-in-out;
-  transition: -webkit-transform 330ms ease-in-out;
+  transform: rotate(0deg);
+  transform-origin: right;
   transition: transform 330ms ease-in-out;
-  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
 }
-
 .menu span {
   width: 80%;
 }
-
 .menu span p {
   font-weight: 500;
   color: #423d3d;
   margin-top: 5px;
   font-size: 0.9em;
 }
-
 .menu .prix {
   width: 20%;
   margin-right: 0;
@@ -960,50 +685,35 @@ header {
 }
 
 .sous-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   list-style: none;
   padding-left: 0;
   /*caracteristiques du menu pour les plus petites résolutions*/
 }
-
 .sous-menu__caption--1 {
-  -webkit-animation: fadein 2s forwards;
-          animation: fadein 2s forwards;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  animation: fadein 2s forwards;
+  animation-delay: 1.5s;
 }
-
 .sous-menu__caption--2 {
-  -webkit-animation: fadein 2s forwards;
-          animation: fadein 2s forwards;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation: fadein 2s forwards;
+  animation-delay: 3s;
 }
-
 .sous-menu__caption--3 {
-  -webkit-animation: fadein 2s forwards;
-          animation: fadein 2s forwards;
-  -webkit-animation-delay: 4.5s;
-          animation-delay: 4.5s;
+  animation: fadein 2s forwards;
+  animation-delay: 4.5s;
 }
-
 .sous-menu .green_line {
   padding: 2px;
   width: 60px;
   background-color: #99E2D0;
   border: 1px transparent none;
 }
-
 @media all and (max-width: 768px) {
   .sous-menu .menu-deroulant li {
     margin-left: 0;
     width: 100%;
   }
 }
-/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=style.css.map */

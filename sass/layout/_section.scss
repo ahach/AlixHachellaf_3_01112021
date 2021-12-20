@@ -1,8 +1,8 @@
 .fonctionnement {
     display: flex;
-    width: 70%; box-sizing: border-box;
+    width: 95%;
+    box-sizing: border-box;
     justify-content: center;
-    margin-left: 30%;
     flex-direction: column;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -13,36 +13,51 @@
     }
 
     ul {
+        display: flex;
         list-style-type: none;
+        flex-direction: row;
         position: relative;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
+        width: 100%;
     }
 }
 
 .fonctionnement li {
-    width: 50%;
+    width: 45%;
+    margin-right: 50px;
     margin-bottom: 30px;
-    display: flex;
+    display: flex; flex-direction: row;
     @include fontoption;
     @include box-shad;
-    padding-left: 10%;
     float: left;
     background-color: $back-clr;
     position: relative;
     text-align: left;
     padding-top: 20px;
-    padding-left: 1%;
     padding-bottom: 20px;
     border: $border;
     border-radius: $border_rad;
     z-index: 1;
     box-shadow: $box-shad;
+    .number {
+        background-color: $colour-primary;
+        position: relative;
+        margin-left: -7px;
+        border: $border;
+        padding: 2px;
+        text-align: center;
+        border-radius: $border_rad;
+        height: 20px;
+        width: 20px;
+        font-weight: 400;
+        color: white;
+    }
 
     .fas {
-        margin-left: 8%;
-        color: grey;
-        margin-right: 5%;
+        
+        color: grey; padding-top: 2px; padding-right: 20px;
+        padding-left: 20px;
     }
 
     &:hover {
@@ -66,22 +81,6 @@
         background-color: lighten($colour-hovbutton, 30);
         z-index: -1;
         transition: transform opacity 250ms;
-    }
-
-    .fonctionnement .number {
-        background-color: $colour-primary;
-        position: relative;
-        margin-right: -12px;
-        margin-top: 20px;
-        margin-left: 10px;
-        border: $border;
-        padding: 2px;
-        text-align: center;
-        border-radius: $border_rad;
-        height: 20px;
-        width: 20px;
-        font-weight: 400;
-        color: white;
     }
 }
 
@@ -166,6 +165,11 @@
 
 .restaurants .fa-heart {
     position: relative;
+    padding-right: 50px;
+    height: 100%;
+    font-size: 2em;
+    font-weight: 1px;
+    color: grey;
 }
 
 .fa-heart:hover {
@@ -214,35 +218,37 @@
 
         ul {
             width: 95%;
+            flex-direction: column;
             box-sizing: border-box;
         }
 
-        .fonctionnement li {
-            width: 90%;
+        li {
+            width: 70%;
+        }
+    }
+
+    .restaurants {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: $back-clr;
+
+        h2 {
+            padding-left: 20px;
         }
 
-        .restaurants {
-            width: 100%;
-            display: flex;
+        ul {
+            margin-left: 10px;
             flex-direction: column;
-            justify-content: space-around;
-            background-color: $back-clr;
 
-            h2 {
-                padding-left: 20px;
-            }
-
-            ul {
-                margin-left: 10px;
-
-                li {
-                    background-color: white;
-                    width: 90%;
-                    @include border;
-
-                }
+            li {
+                background-color: white;
+                width: 90%;
+                @include border;
 
             }
+
         }
     }
 }

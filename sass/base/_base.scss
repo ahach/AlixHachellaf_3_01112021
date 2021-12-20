@@ -16,6 +16,7 @@ footer {
     cursor: pointer;
     font-family: $font_body;
 }
+section .photo img, article.menu{max-width: 90%; margin:20px;}
 
 h1 {
     font-size: 1.4em;
