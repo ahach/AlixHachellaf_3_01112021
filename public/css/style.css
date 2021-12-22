@@ -266,9 +266,6 @@ footer {
   margin: 0px;
   align-content: center;
   width: 100%;
-  display: flex;
-  justify-content: stretch;
-  flex-direction: column;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   max-width: 1920px;
@@ -278,8 +275,7 @@ h1 {
   font-size: 1.4em;
   font-weight: 900;
   margin-bottom: 0;
-  width: 90%;
-  margin-left: 5%;
+  width: 100%;
   align-items: center;
 }
 
@@ -287,7 +283,6 @@ h2 {
   color: grey;
   font-size: 1.2em;
   font-weight: 500;
-  margin-left: 2px;
 }
 
 .far {
@@ -324,6 +319,7 @@ h3 {
   border: none;
   font-style: bold;
   opacity: 1;
+  margin-top: 30px;
 }
 
 ._commander {
@@ -349,19 +345,19 @@ h3 {
   border: 1px transparent none;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   border-top: solid 3px rgba(195, 199, 193, 0.8);
   text-align: center;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
 .slogan .zone_recherche {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  text-align: center;
   padding-bottom: 1em;
   padding-top: 1em;
   background-color: rgba(195, 199, 193, 0.3);
   color: #423d3d;
+  margin-left: 0;
 }
 .slogan .zone_recherche .recherche {
   color: black;
@@ -371,41 +367,41 @@ h3 {
   color: #423d3d;
   border: none;
   background-color: rgba(255, 255, 255, 0);
-  width: 50%;
 }
-.slogan .zone_recherche .fas {
-  margin-right: 5%;
-  margin-left: 15%;
-}
-.slogan h1 {
-  margin-left: 30px;
+
+header {
+  text-align: center;
 }
 
 .header__logo {
-  align-items: center;
+  text-align: center;
   margin-top: 10px;
   display: flex;
 }
 .header__logo img {
-  width: 100%;
   align-items: center;
 }
 
 /*caracteristiques du header pour les pages de menu*/
-.header__logo i.fas {
+.header__logo {
+  justify-content: center;
+}
+.header__logo a {
+  width: 10%;
+}
+.header__logo a .fa-arrow-left {
   float: left;
-  font-size: 1.5em;
-  color: black;
-  margin-bottom: 15px;
-  margin-right: 20px;
-  height: 100%;
+  color: grey;
+  font-size: 5em;
+  margin-bottom: 5%;
+  margin-left: 20px;
+  font-size: 2rem;
+}
+.header__logo img {
+  padding-left: 10%;
 }
 
 /*fin du header pour les pages*/
-.slogan .zone_recherche {
-  margin-left: 0;
-}
-
 .fonctionnement {
   display: flex;
   width: 95%;
@@ -684,7 +680,6 @@ footer a .fas {
   font-weight: 200;
 }
 
-/*caracteristiques du header pour les pages de menu*/
 .loader {
   width: 100%;
   height: 100%;
@@ -694,31 +689,6 @@ footer a .fas {
   display: flex;
 }
 
-header {
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-}
-
-.header__logo {
-  justify-content: center;
-}
-.header__logo a {
-  width: 10%;
-}
-.header__logo a .fa-arrow-left {
-  float: left;
-  color: grey;
-  font-size: 5em;
-  margin-bottom: 5%;
-  margin-left: 20px;
-  font-size: 2rem;
-}
-.header__logo img {
-  padding-left: 10%;
-}
-
-/*fin du header pour les pages*/
 /* caracteristiques des elements pour les pages des menus*/
 .photo {
   height: 10%;
@@ -726,7 +696,7 @@ header {
 .photo img {
   width: 100%;
   object-fit: cover;
-  height: 500px;
+  height: 200px;
 }
 
 .menu {

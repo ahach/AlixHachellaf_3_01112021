@@ -9,7 +9,6 @@ main,
 footer {
     margin: 0px;
     align-content: center;
-    text-align: center;
     width: 100%;
     cursor: pointer;
     font-family: $font_body;
@@ -20,8 +19,7 @@ h1 {
     font-size: 1.4em;
     font-weight: 900;
     margin-bottom: 0;
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
     align-items: center;
 }
 
@@ -29,7 +27,6 @@ h2 {
     color: grey;
     font-size: 1.2em;
     font-weight: 500;
-    margin-left: 2px;
 }
 
 .far {
