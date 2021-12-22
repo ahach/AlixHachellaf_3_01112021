@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**Loader Spinner**/
-header, main, footer {
+header.page_menu, main.page_menu, footer.page_menu {
   animation-name: molten-pull;
   animation-duration: 5s;
   animation-direction: reverse;
