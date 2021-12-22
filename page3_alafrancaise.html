@@ -1,96 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Shrikhand&display=swap" 
-    rel="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="public\css\prefixed/style.css"/>
-    <script src="https://kit.fontawesome.com/9efe5ec66f.js" crossorigin="anonymous"></script>
-    <title>Ohmyfood_palette_du_gout</title>
-  </head>
-  <body>
-    <div class="loader">
-      <div class="LoaderSpinner"></div>
-<!--   <div class="animation_chargement"></div></div>--> 
-    </div>
-    
-    <header>
-      <div class="header__logo"><a href="index.html"><i class="fas fa-arrow-left"></i></a>
-        <img src="public/images/logo/ohmyfood.png"></div>
-    </header>
-    
-<main>
-  <section class="photo">
-    <img src="public/images/restaurants/palette_du_gout.jpg" alt="Palette du goût"> 
-        </section>
-<article class="menu">
-  <h1>La note enchantée<i class="far fa-heart"></i></h1>
-   <section class="menu-deroulant">
-     <h2>ENTREES</h2><div class="green_line"></div>
-<ul class ="sous-menu">
-  <li class="sous-menu__caption--1"><span>Tartare de poulpe acidulé<p> Aux zestes d'orange
-   </p></span><div class="prix">25€</div><div class="green_fill"><i class="fas fa-check"></i></div></li> 
-  <li class="sous-menu__caption--2"><span>Velouté de légumes d'antan
-    <p>
-      Carotte, panais, topinambour</p></span><div class="prix">35€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-  <li class="sous-menu__caption--3"><span> Soupe à l'oignon
-    <p>Revisitée</p></span><div class="prix">20€</div><div class="green_fill"><i class="fas fa-check"></i></div></li> 
-</ul>
-</section>
-<section class="menu-deroulant">
-  <h2>PLATS</h2><div class="green_line"></div>
-  <ul class ="sous-menu">
-    <li class="sous-menu__caption--1"><span>Coquilles Saint-Jacques
-    <p>
-      Accompagnées d'une purée de panais</p></span>
-    <div class="prix">40€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="sous-menu__caption--2"><span>Magret de canard   
-   <p>
-    Et parmentier de pommes de terre</p></span>
-   <div class="prix">35€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-   <li class="sous-menu__caption--3"><span>Pigeonneau d’Ille-et-Vilaine
-    <p>Sur son lit de gnocchis aux légumes</p></span>
-    <div class="prix">44€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-</ul>
-  </section>
-  <section class="menu-deroulant">
-  <h2>DESSERTS</h2><div class="green_line"></div>
-  <ul class ="sous-menu">
-    <li class="sous-menu__caption--1"><span>Pétales de violettes glacés
-    <p>Et purée de noisettes</p></span>
-    <div class="prix">18€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="sous-menu__caption--2"><span>Fondant au chocolat
-      
-    <p> Revisité</p></span><div class="prix">22€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="sous-menu__caption--3"><span>Millefeuille croustillant
-    <p>Myrtilles et pâte d’amande</p></span>
-    <div class="prix">23€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-</ul>
-  </section>
-  <form><input type="button" class="_commander" value="Commander"</></form>
-</article>
-</main>
 
-<footer>
-  <img class="logo_footer" src="public/images/logo/ohmyfood@2x.svg">
-  <ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Shrikhand&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="public/css/style.css" />
+  <script src="https://kit.fontawesome.com/9efe5ec66f.js" crossorigin="anonymous"></script>
+  <title>Ohmyfood_palette_du_gout</title>
+</head>
+
+<body>
+  <div class="loader">
+    <div class="LoaderSpinner"></div>
+    <!--   <div class="animation_chargement"></div></div>-->
+  </div>
+
+  <header>
+    <div class="header__logo"><a href="index.html"><i class="fas fa-arrow-left"></i></a>
+      <img src="public/images/logo/ohmyfood.png" alt="logo ohmyfood"></div>
+  </header>
+
+  <main>
+    <section class="photo">
+      <img src="public/images/restaurants/palette_du_gout.jpg" alt="Palette du goût">
+    </section>
+    <article class="menu">
+      <h1>La note enchantée<i class="far fa-heart"></i></h1>
+      <section class="menu-deroulant">
+        <h2>ENTREES</h2>
+        <div class="green_line"></div>
+        <ul class="sous-menu">
+          <li class="sous-menu__caption--1">
+            <p>Tartare de poulpe acidulé<span> Aux zestes d'orange
+              </span></p>
+            <div class="prix">25€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+          <li class="sous-menu__caption--2">
+            <p>Velouté de légumes d'antan
+              <span>
+                Carotte, panais, topinambour</span></p>
+            <div class="prix">35€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+          <li class="sous-menu__caption--3">
+            <p> Soupe à l'oignon
+              <span>Revisitée</span></p>
+            <div class="prix">20€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+        </ul>
+      </section>
+      <section class="menu-deroulant">
+        <h2>PLATS</h2>
+        <div class="green_line"></div>
+        <ul class="sous-menu">
+          <li class="sous-menu__caption--1">
+            <p>Coquilles Saint-Jacques
+              <span>
+                Accompagnées d'une purée de panais</span></p>
+            <div class="prix">40€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+          <li class="sous-menu__caption--2">
+            <p>Magret de canard
+              <span>
+                Et parmentier de pommes de terre</span></p>
+            <div class="prix">35€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+          <li class="sous-menu__caption--3">
+            <p>Pigeonneau d’Ille-et-Vilaine
+              <span>Sur son lit de gnocchis aux légumes</span></p>
+            <div class="prix">44€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+        </ul>
+      </section>
+      <section class="menu-deroulant">
+        <h2>DESSERTS</h2>
+        <div class="green_line"></div>
+        <ul class="sous-menu">
+          <li class="sous-menu__caption--1">
+            <p>Pétales de violettes glacés
+              <span>Et purée de noisettes</span></p>
+            <div class="prix">18€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+          <li class="sous-menu__caption--2">
+            <p>Fondant au chocolat
+
+              <span> Revisité</span></p>><div class="prix">22€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+          <li class="sous-menu__caption--3">
+            <p>Millefeuille croustillant
+              <span>Myrtilles et pâte d’amande</span></p>
+            <div class="prix">23€</div>
+            <div class="green_fill"><i class="fas fa-check"></i></div>
+          </li>
+        </ul>
+      </section>
+      <form><input type="button" class="_commander" value="Commander" /></form>
+    </article>
+  </main>
+
+  <footer>
+    <img class="logo_footer" src="public/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
+
     <div class="footer_important">
-      <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-      <li><a href="#"><i class="fas fa-hands-helping"></i>Devenez partenaire</a></li>
+      <ul>
+        <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+        <li><a href="#"><i class="fas fa-hands-helping"></i>Devenez partenaire</a></li>
+      </ul>
     </div>
     <div class="footer_secondaire">
-      <li><a href="#">Mentions légales</a></li>
-      <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+      <ul>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+      </ul>
     </div>
-  </ul>
-</footer>
+  </footer>
 
-  </body>
+</body>
+
 </html>
-  
