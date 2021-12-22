@@ -10,14 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="public\css\style.css"/>
+    <link rel="stylesheet" href="public\css\prefixed/style.css"/>
     <script src="https://kit.fontawesome.com/9efe5ec66f.js" crossorigin="anonymous"></script>
     <title>Ohmyfood_palette_du_gout</title>
   </head>
   <body>
     <div class="loader">
-    <div class="animation_chargement"></div></div>
-    
+      <div class="LoaderSpinner"></div>
+<!--   <div class="animation_chargement"></div></div>--> 
+    </div>
     <header>
       <div class="header__logo"><a href="index.html"><i class="fas fa-arrow-left"></i></a>
         <img src="public/images/logo/ohmyfood.png"></div>
@@ -46,15 +47,15 @@
 <section class="menu-deroulant">
   <h2>PLATS</h2><div class="green_line"></div>
   <ul class ="sous-menu">
-  <li class="caption"><span>Poulet rôti aux herbes de Provence 
+    <li class="sous-menu__caption--1"><span>Poulet rôti aux herbes de Provence 
     <p>
       Et sa crème de truffe</p></span>
     <div class="prix">40€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="caption"><span>Langouste rôtie
+    <li class="sous-menu__caption--2"><span>Langouste rôtie
    <p>Et ses légumes de saison
     </p></span>
    <div class="prix">35€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-   <li class="caption"><span>Côte de boeuf Angus
+   <li class="sous-menu__caption--3"><span>Côte de boeuf Angus
     <p>Et sa purée de panais</p></span>
     <div class="prix">44€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
 </ul>
@@ -62,12 +63,12 @@
   <section class="menu-deroulant">
   <h2>DESSERTS</h2><div class="green_line"></div>
   <ul class ="sous-menu">
-  <li class="caption"><span>Farandole de desserts du chef
+    <li class="sous-menu__caption--1"><span>Farandole de desserts du chef
     <p></p></span>
     <div class="prix">18€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="caption"><span>Crème brulée   
+    <li class="sous-menu__caption--2"><span>Crème brulée   
     <p>Revisité</p></span><div class="prix">22€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="caption"><span>Tiramisu
+    <li class="sous-menu__caption--3"><span>Tiramisu
     <p>À la noisette</p></span>
     <div class="prix">23€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
 </ul>
@@ -80,12 +81,15 @@
   <img class="logo_footer" src="public/images/logo/ohmyfood@2x.svg">
   <ul>
     <div class="footer_important">
-    <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-    <li><i class="fas fa-hands-helping"></i>Devenez partenaire</li></div>
-    <div class="footer_secondaire"><li>Mentions légales</li>
-    <li><a href="mailto:contact@ohmyfood.com">Contact</a></li></div>
+      <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+      <li><a href="#"><i class="fas fa-hands-helping"></i>Devenez partenaire</a></li>
+    </div>
+    <div class="footer_secondaire">
+      <li><a href="#">Mentions légales</a></li>
+      <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+    </div>
   </ul>
 </footer>
-</div>
+
   </body>
 </html>

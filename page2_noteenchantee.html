@@ -10,14 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="public\css\style.css"/>
+    <link rel="stylesheet" href="public\css\prefixed/style.css"/>
     <script src="https://kit.fontawesome.com/9efe5ec66f.js" crossorigin="anonymous"></script>
     <title>Ohmyfood_palette_du_gout</title>
   </head>
   <body>
     <div class="loader">
-    <div class="animation_chargement"></div></div>
-    
+      <div class="LoaderSpinner"></div>
+<!--   <div class="animation_chargement"></div></div>--> 
+    </div>
     <header>
       <div class="header__logo"><a href="index.html"><i class="fas fa-arrow-left"></i></a>
         <img src="public/images/logo/ohmyfood.png"></div>
@@ -44,15 +45,15 @@
 <section class="menu-deroulant">
   <h2>PLATS</h2><div class="green_line"></div>
   <ul class ="sous-menu">
-  <li class="caption"><span>Noix de coquilles Saint-Jacques
+    <li class="sous-menu__caption--1"><span>Noix de coquilles Saint-Jacques
     <p>
       Sur lit de purée de céleri-rave</p></span>
     <div class="prix">40€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="caption"><span>Langoustine poêlée
+    <li class="sous-menu__caption--2"><span>Langoustine poêlée
    <p>
     Purée de patate douce</p></span>
    <div class="prix">35€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-   <li class="caption"><span>Mijoté de queue de boeuf 
+   <li class="sous-menu__caption--3"><span>Mijoté de queue de boeuf 
     <p>Aux agrumes</p></span>
     <div class="prix">44€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
 </ul>
@@ -60,12 +61,12 @@
   <section class="menu-deroulant">
   <h2>DESSERTS</h2><div class="green_line"></div>
   <ul class ="sous-menu">
-  <li class="caption"><span>Macaron noisette et chocolat
+    <li class="sous-menu__caption--1"><span>Macaron noisette et chocolat
     <p>Glace au caramel brun et sel de Guérande</p></span>
     <div class="prix">18€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="caption"><span>Baba au rhum revisité
+    <li class="sous-menu__caption--2"><span>Baba au rhum revisité
     <p> Avec son coulis de citron</p></span><div class="prix">22€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
-    <li class="caption"><span>Tarte au citron meringuée 
+    <li class="sous-menu__caption--3"><span>Tarte au citron meringuée 
     <p>Déstructurée</p></span>
     <div class="prix">23€</div><div class="green_fill"><i class="fas fa-check"></i></div></li>
 </ul>
@@ -78,12 +79,15 @@
   <img class="logo_footer" src="public/images/logo/ohmyfood@2x.svg">
   <ul>
     <div class="footer_important">
-    <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
-    <li><i class="fas fa-hands-helping"></i>Devenez partenaire</li></div>
-    <div class="footer_secondaire"><li>Mentions légales</li>
-    <li><a href="mailto:contact@ohmyfood.com">Contact</a></li></div>
+      <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+      <li><a href="#"><i class="fas fa-hands-helping"></i>Devenez partenaire</a></li>
+    </div>
+    <div class="footer_secondaire">
+      <li><a href="#">Mentions légales</a></li>
+      <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+    </div>
   </ul>
 </footer>
-</div>
+
   </body>
 </html>

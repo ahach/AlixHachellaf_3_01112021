@@ -9,14 +9,12 @@ main,
 footer {
     margin: 0px;
     align-content: center;
+    text-align: center;
     width: 100%;
-    display: flex;
-    justify-content: stretch;
-    flex-direction: column;
     cursor: pointer;
     font-family: $font_body;
+    max-width: 1920px;
 }
-section .photo img, article.menu{max-width: 90%; margin:20px;}
 
 h1 {
     font-size: 1.4em;

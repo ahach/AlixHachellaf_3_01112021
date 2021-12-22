@@ -1,18 +1,166 @@
 @charset "UTF-8";
+/**Loader Spinner**/
+header, main, footer {
+  animation-name: molten-pull;
+  animation-duration: 5s;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(252, 252, 252, 0.95);
+  position: fixed;
+  animation-name: molten-push;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.LoaderSpinner {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 10px solid rgba(153, 226, 208, 0.2);
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.LoaderSpinner:before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 10px solid transparent;
+  border-top-color: #9356DC;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: spinner;
+  animation-duration: 600ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.LoaderSpinner:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 10px solid transparent;
+  border-bottom-color: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 50%;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  position: absolute;
+  animation-name: spinner;
+  animation-duration: 600ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*Les animations*/
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes molten-push {
+  0% {
+    opacity: 0.95;
+    z-index: 1000;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes molten-pull {
+  0% {
+    opacity: 0.95;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /*liste des mixins à utiliser*/
 /*keyframes et specificités sur l'animation du menu déroulant */
 @keyframes fadein {
   0% {
-    transform: translateY(-9999);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0);
-    opacity: 0.5;
+    transform: translateY(20px);
+    opacity: 0%;
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(0px);
+    opacity: 100%;
   }
 }
 /*spécificités du code sur le loading spinner*/
@@ -123,11 +271,7 @@ footer {
   flex-direction: column;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
-}
-
-section .photo img, article.menu {
-  max-width: 90%;
-  margin: 20px;
+  max-width: 1920px;
 }
 
 h1 {
@@ -542,18 +686,22 @@ footer a .fas {
 
 /*caracteristiques du header pour les pages de menu*/
 .loader {
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  display: flex;
 }
 
 header {
   z-index: 2;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .header__logo {
-  justify-content: start;
+  justify-content: center;
 }
 .header__logo a {
   width: 10%;
@@ -563,6 +711,7 @@ header {
   color: grey;
   font-size: 5em;
   margin-bottom: 5%;
+  margin-left: 20px;
   font-size: 2rem;
 }
 .header__logo img {
@@ -576,6 +725,8 @@ header {
 }
 .photo img {
   width: 100%;
+  object-fit: cover;
+  height: 500px;
 }
 
 .menu {
@@ -602,7 +753,7 @@ header {
   position: absolute;
   right: 10px;
   color: grey;
-  font-weight: 400;
+  font-weight: 200;
 }
 .menu .menu-deroulant {
   align-items: center;
@@ -623,51 +774,58 @@ header {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   font-size: 1.2em;
-  padding-bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   border: 1px transparent none;
   border-radius: 20px 20px 20px 20px;
   margin-bottom: 20px;
+  margin: 1rem auto;
+  overflow: hidden;
+  box-shadow: 0px 5px 5px 0px lightgray;
+  width: 80%;
+  cursor: pointer;
 }
-.menu .menu-deroulant li:hover > .caption span {
+.menu .menu-deroulant li:hover > .caption span, .menu .menu-deroulant li:hover p {
   text-overflow: ellipsis;
 }
 .menu .menu-deroulant li:hover > .green_fill {
   transform: scaleX(1);
-  width: 30px;
+  width: 50px;
 }
-.menu .menu-deroulant li:hover > .green_fill > .fa-check {
+.menu .menu-deroulant li:hover > .green_fill > .green_fill .fa-check {
   transform: rotate(-360deg);
 }
 .menu li .green_fill {
   background-color: #99E2D0;
   padding: 15px;
   border: 1px transparent none;
-  border-radius: 20px 20px 20px 20px;
-  width: 1px;
-  height: 100%;
+  border-radius: 0px 0px 0px 0px;
+  margin-right: -2px;
   transform: scaleX(0);
+  width: 0px;
   transform-origin: right 50%;
   transition: transform 350ms ease-in-out;
 }
 .menu li .green_fill .fa-check {
-  overflow: hidden;
-  display: block;
-  padding: 8px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #99E2D0;
   background-color: white;
-  border-radius: 50%;
-  height: 100%;
-  width: 100%;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px 25px 25px 25px;
+  font-size: 10px;
   transform: rotate(0deg);
   transform-origin: right;
   transition: transform 330ms ease-in-out;
 }
 .menu span {
   width: 80%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+  padding: 15px;
+  font-size: smaller;
 }
 .menu span p {
   font-weight: 500;
@@ -689,7 +847,6 @@ header {
   flex-direction: column;
   list-style: none;
   padding-left: 0;
-  /*caracteristiques du menu pour les plus petites résolutions*/
 }
 .sous-menu__caption--1 {
   animation: fadein 2s forwards;
@@ -703,14 +860,17 @@ header {
   animation: fadein 2s forwards;
   animation-delay: 4.5s;
 }
-.sous-menu .green_line {
+
+.green_line {
   padding: 2px;
   width: 60px;
   background-color: #99E2D0;
   border: 1px transparent none;
 }
+
+/*caracteristiques du menu pour les plus petites résolutions*/
 @media all and (max-width: 768px) {
-  .sous-menu .menu-deroulant li {
+  .menu .menu-deroulant li {
     margin-left: 0;
     width: 100%;
   }

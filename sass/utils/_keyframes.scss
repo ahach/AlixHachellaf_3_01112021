@@ -1,18 +1,13 @@
 /*keyframes et specificités sur l'animation du menu déroulant */
 @keyframes fadein {
-    0% {
-        transform: translateY(-9999);
-        opacity: 0;
-    }
-
-    50% {
-        transform: translateY(0);
-        opacity: 0.5;}
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+        0%{
+            transform: translateY(20px);
+            opacity: 0%;
+        }
+        100%{
+            transform: translateY(0px);
+            opacity: 100%;
+        }
 }
 
 /*spécificités du code sur le loading spinner*/
