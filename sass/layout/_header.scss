@@ -1,5 +1,6 @@
-
-header{ text-align: center;}
+header {
+    text-align: center;
+}
 
 .header__logo {
     text-align: center;
@@ -21,14 +22,11 @@ header{ text-align: center;}
         .fa-arrow-left {
             float: left;
             color: grey;
+            margin-top: 15px;
             font-size: 5em;
-            margin-bottom: 5%; margin-left:20px;
+            margin-left: 20px;
             font-size: 2rem;
         }
-    }
-
-    img {
-        padding-left: 10%;
     }
 }
 

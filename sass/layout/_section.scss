@@ -27,7 +27,8 @@
     width: 45%;
     margin-right: 50px;
     margin-bottom: 30px;
-    display: flex; flex-direction: row;
+    display: flex;
+    flex-direction: row;
     @include fontoption;
     @include box-shad;
     float: left;
@@ -40,6 +41,7 @@
     border-radius: $border_rad;
     z-index: 1;
     box-shadow: $box-shad;
+
     .number {
         background-color: $colour-primary;
         position: relative;
@@ -55,8 +57,10 @@
     }
 
     .fas {
-        
-        color: grey; padding-top: 2px; padding-right: 20px;
+
+        color: grey;
+        padding-top: 2px;
+        padding-right: 20px;
         padding-left: 20px;
     }
 
@@ -146,13 +150,13 @@
                     margin-top: 15px;
                     height: 20%;
 
-                    span {
+                    p {
                         padding-left: 10px;
                         padding-bottom: 10px;
                     }
                 }
 
-                p {
+                span {
                     font-weight: 1px;
                     color: grey;
                     margin-top: 0;
