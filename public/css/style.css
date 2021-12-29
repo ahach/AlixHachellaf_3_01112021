@@ -234,23 +234,6 @@ header.page_menu, main.page_menu, footer.page_menu {
     visibility: hidden;
   }
 }
-.animation_chargement {
-  display: flex;
-  flex-direction: column;
-  height: 20px;
-}
-.animation_chargement span {
-  font-family: "Shrikhand", cursive;
-  background-color: white;
-  font-weight: 2px;
-  border-top: 10px solid white;
-  border-bottom: 10px solid white;
-  border-left: 10px solid white;
-  border-right: 10px solid white;
-  opacity: 0;
-  animation: back 2s forwards;
-}
-
 body {
   margin: auto;
   color: black;
@@ -322,7 +305,6 @@ h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   border: none;
-  font-style: bold;
   opacity: 1;
   margin-top: 30px;
 }
@@ -347,7 +329,8 @@ h3 {
 
 .slogan {
   background-color: rgba(195, 199, 193, 0.2);
-  border: 1px transparent none;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -397,7 +380,6 @@ header {
   float: left;
   color: grey;
   margin-top: 15px;
-  font-size: 5em;
   margin-left: 20px;
   font-size: 2rem;
 }
@@ -437,22 +419,22 @@ header {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   box-shadow: 0px 0px 8px 2px rgba(161, 170, 167, 0.3);
+  border: none;
+  border-radius: 20px 20px 20px 20px;
   float: left;
   background-color: rgba(195, 199, 193, 0.2);
   position: relative;
   text-align: left;
   padding-top: 20px;
   padding-bottom: 20px;
-  border: 1px transparent none;
-  border-radius: 20px 20px 20px 20px;
   z-index: 1;
-  box-shadow: 10px 20px 20px rgba(161, 170, 167, 0.2);
 }
 .fonctionnement li .number {
+  border: none;
+  border-radius: 20px 20px 20px 20px;
   background-color: #9356DC;
   position: relative;
   margin-left: -7px;
-  border: 1px transparent none;
   padding: 2px;
   text-align: center;
   border-radius: 20px 20px 20px 20px;
@@ -473,7 +455,8 @@ header {
 .fonctionnement li .__hov {
   position: absolute;
   top: 0;
-  border: 1px transparent none;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
   width: 100%;
   border-radius: 20px 20px 20px 20px;
   overflow: hidden;
@@ -484,7 +467,7 @@ header {
   left: 0;
   background-color: #e4d5f6;
   z-index: -1;
-  transition: transform opacity 250ms;
+  transition: opacity 250ms;
 }
 
 .restaurants {
@@ -506,7 +489,7 @@ header {
   width: 40%;
   margin-right: 10px;
   margin-bottom: 20px;
-  border: 1px solid none;
+  border: none;
   border-radius: 20px 20px 20px 20px;
 }
 .restaurants ul li a {
@@ -524,7 +507,8 @@ header {
   position: relative;
 }
 .restaurants ul li a img {
-  border: 1px transparent none;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
   border-radius: 20px 20px 20px 20px;
   width: 100%;
   object-fit: cover;
@@ -554,7 +538,7 @@ header {
   padding-bottom: 10px;
 }
 .restaurants ul li a span {
-  font-weight: 1px;
+  font-weight: 400;
   color: grey;
   margin-top: 0;
   font-style: normal;
@@ -565,7 +549,7 @@ header {
   padding-right: 50px;
   height: 100%;
   font-size: 2em;
-  font-weight: 1px;
+  font-weight: 400;
   color: grey;
 }
 
@@ -598,6 +582,7 @@ header {
   opacity: 0;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: opacity 400ms ease-out;
@@ -639,7 +624,7 @@ header {
   .restaurants ul li {
     background-color: white;
     width: 90%;
-    border: 1px solid none;
+    border: none;
     border-radius: 20px 20px 20px 20px;
   }
 }
@@ -707,8 +692,6 @@ footer a .fas {
   background-color: #f2F2F2;
   margin-top: -12%;
   border-radius: 25px 25px 0px 20px;
-  display: flex;
-  flex-direction: column;
 }
 .menu h1 {
   margin-left: 20px;
@@ -738,16 +721,14 @@ footer a .fas {
   display: flex;
   flex-direction: row;
   background-color: white;
-  border: 1px solid none;
+  border: none;
   border-radius: 20px 20px 20px 20px;
   color: black;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   font-size: 1.2em;
-  border: 1px transparent none;
   border-radius: 20px 20px 20px 20px;
-  margin-bottom: 20px;
   margin: 1rem auto;
   overflow: hidden;
   box-shadow: 0px 5px 5px 0px lightgray;
@@ -768,7 +749,8 @@ footer a .fas {
 .menu li .green_fill {
   background-color: #99E2D0;
   padding: 15px;
-  border: 1px transparent none;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
   margin-right: -2px;
   transform: scaleX(0);
   width: 0px;
@@ -837,7 +819,8 @@ footer a .fas {
   padding: 2px;
   width: 60px;
   background-color: #99E2D0;
-  border: 1px transparent none;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
 }
 
 /*caracteristiques du menu pour les plus petites résolutions*/
