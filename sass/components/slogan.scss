@@ -1,6 +1,6 @@
 .slogan {
     background-color:rgba($color:#c3c7c1, $alpha: 0.2);
-    border: $border;
+    @include border;
     display: flex;
     flex-direction: column; justify-content: space-between;
     text-align: center;

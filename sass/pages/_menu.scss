@@ -28,8 +28,6 @@
     background-color: #f2F2F2;
     margin-top: -12%;
     border-radius: 25px 25px 0px 20px;
-    display: flex;
-    flex-direction: column;
 
     h1 {
         margin-left: 20px;
@@ -66,9 +64,7 @@
             @include border;
             @include fontoption;
             font-size: 1.2em;
-            border: $border;
             border-radius: $border_rad;
-            margin-bottom: 20px;
             margin: 1rem auto;
             overflow: hidden;
             box-shadow: 0px 5px 5px 0px lightgray;
@@ -97,7 +93,7 @@
     li .green_fill {
         background-color: $colour-tertiary;
         padding: 15px;
-        border: $border;
+        @include border;
         margin-right: -2px;
         transform: scaleX(0);
         width: 0px;
@@ -167,7 +163,7 @@
     padding: 2px;
     width: 60px;
     background-color: $colour-tertiary;
-    border: $border;
+    @include border;
 }
 
 

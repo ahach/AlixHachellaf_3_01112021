@@ -31,22 +31,20 @@
     flex-direction: row;
     @include fontoption;
     @include box-shad;
+    @include border;
     float: left;
     background-color: $back-clr;
     position: relative;
     text-align: left;
     padding-top: 20px;
     padding-bottom: 20px;
-    border: $border;
-    border-radius: $border_rad;
     z-index: 1;
-    box-shadow: $box-shad;
 
     .number {
+        @include border;
         background-color: $colour-primary;
         position: relative;
         margin-left: -7px;
-        border: $border;
         padding: 2px;
         text-align: center;
         border-radius: $border_rad;
@@ -73,7 +71,7 @@
     .__hov {
         position: absolute;
         top: 0;
-        border: $border;
+        @include border;
         width: 100%;
         border-radius: $border_rad;
         overflow: hidden;
@@ -84,7 +82,7 @@
         left: 0;
         background-color: lighten($colour-hovbutton, 30);
         z-index: -1;
-        transition: transform opacity 250ms;
+        transition: opacity 250ms;
     }
 }
 
@@ -123,7 +121,7 @@
                 position: relative;
 
                 img {
-                    border: $border;
+                    @include border;
                     border-radius: $border_rad;
                     width: 100%;
                     object-fit: cover;
@@ -157,7 +155,7 @@
                 }
 
                 span {
-                    font-weight: 1px;
+                    font-weight: 400;
                     color: grey;
                     margin-top: 0;
                     font-style: normal;
@@ -172,7 +170,7 @@
     padding-right: 50px;
     height: 100%;
     font-size: 2em;
-    font-weight: 1px;
+    font-weight: 400;
     color: grey;
 }
 
@@ -205,6 +203,7 @@
     opacity: 0;
     background: linear-gradient(#9356DC, #FF79DA);
     background-clip: text;
+    color:transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: opacity 400ms ease-out;
