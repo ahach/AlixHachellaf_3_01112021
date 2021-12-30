@@ -14,14 +14,18 @@ footer {
     font-family: $font_body;
     max-width: 1920px;
 }
-main{display: flex; flex-direction: column;}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
 
 h1 {
     font-size: 1.4em;
     font-weight: 900;
     margin-bottom: 0;
-    width: 100%;
     align-items: center;
+    margin-left: 40px;
 }
 
 h2 {
