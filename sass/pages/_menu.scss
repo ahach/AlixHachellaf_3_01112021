@@ -65,10 +65,10 @@
             @include fontoption;
             font-size: 1.2em;
             border-radius: $border_rad;
-            margin: 1rem auto;
+            margin: 1rem;
             overflow: hidden;
             box-shadow: 0px 5px 5px 0px lightgray;
-            width: 80%;
+            width: 65%;
             cursor: pointer;
         }
 
@@ -94,6 +94,8 @@
         background-color: $colour-tertiary;
         padding: 15px;
         @include border;
+        display: flex;
+        justify-content: center;
         margin-right: -2px;
         transform: scaleX(0);
         width: 0px;
@@ -103,31 +105,29 @@
 
     li .green_fill .fa-check {
         display: flex;
-        justify-content: center;
+        justify-content: center; text-align: center;
         align-items: center;
         color: $colour-tertiary;
         background-color: white;
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         border-radius: 25px 25px 25px 25px;
-        font-size: 10px;
+        font-size: 30px;
         transform: rotate(180deg);
         transition-duration: 0.7s;
     }
 
     p {
-        width: 80%; display: flex; flex-direction: column;
+        width: 80%; display: flex; flex-direction: column; justify-content: space-evenly;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        flex: 1;
-        padding: 15px;
+        flex: 1; padding-left: 10px; margin: 0;
         font-size: smaller;
 
         span {
-            font-weight: 500;
-            color: rgb(66, 61, 61);
-            margin-top: 5px;
+            font-weight: 600;
+            color: rgb(97, 93, 93);
             font-size: 0.9em;
         }
     }
@@ -137,7 +137,7 @@
         margin-right: 0;
         float: right;
         text-align: right;
-        margin-top: 25px;
+        margin-top: 40px;
         font-size: 0.9em;
     }
 }

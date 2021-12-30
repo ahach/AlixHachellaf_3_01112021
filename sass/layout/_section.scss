@@ -8,7 +8,7 @@
     padding-bottom: 2%;
 
     h1 {
-        margin: 3px;
+
         padding-bottom: 20px;
     }
 
@@ -25,8 +25,8 @@
 
 .fonctionnement li {
     width: 45%;
-    margin-right: 50px;
     margin-bottom: 30px;
+    margin-right: 30px;
     display: flex;
     flex-direction: row;
     @include fontoption;
@@ -122,7 +122,7 @@
 
                 img {
                     @include border;
-                    border-radius: $border_rad;
+                    border-radius: 30px 30px 0px 0px;
                     width: 100%;
                     object-fit: cover;
                     height: 200px;
@@ -203,7 +203,7 @@
     opacity: 0;
     background: linear-gradient(#9356DC, #FF79DA);
     background-clip: text;
-    color:transparent;
+    color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: opacity 400ms ease-out;
@@ -214,19 +214,17 @@
 @media all and (max-width: 768px) {
     .fonctionnement {
         display: flex;
-        width: 95%;
         justify-content: center;
-        margin-left: 1%;
-        margin-right: 0;
 
         ul {
-            width: 95%;
-            flex-direction: column;
             box-sizing: border-box;
+            flex-direction: column;
+            padding-left: 0;
         }
 
         li {
-            width: 70%;
+            width: 80%;
+            margin-right: 0;
         }
     }
 
@@ -237,19 +235,17 @@
         justify-content: space-around;
         background-color: $back-clr;
 
-        h2 {
-            padding-left: 20px;
+        h1 {
+            margin-bottom: 20px;
         }
 
         ul {
-            margin-left: 10px;
-            flex-direction: column;
+            margin: 0 auto;
 
             li {
                 background-color: white;
                 width: 90%;
                 @include border;
-
             }
 
         }
