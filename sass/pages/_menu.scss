@@ -68,7 +68,7 @@
             margin: 1rem;
             overflow: hidden;
             box-shadow: 0px 5px 5px 0px lightgray;
-            width: 65%;
+            width: 40%;
             cursor: pointer;
         }
 
@@ -144,7 +144,6 @@
 
 .sous-menu {
     display: flex;
-    flex-direction: column;
     list-style: none;
     padding-left: 0;
 
@@ -172,6 +171,9 @@
 
     .menu .menu-deroulant li {
         margin-left: 0;
-        width: 100%;
+        width: 100%;}
+        .sous-menu{flex-direction: column;}
     }
-}
+    @media all and (max-width: 480px) {
+        .menu h1 .fa-heart{right: 10px;}
+    }

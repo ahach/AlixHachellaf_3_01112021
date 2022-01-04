@@ -35,19 +35,7 @@ h2 {
 }
 
 .far {
-    font-weight: 1px;
-}
-
-@media all and (max-width: 768px) {
-    body {
-        max-width: 768px;
-    }
-
-    header,
-    main,
-    footer {
-        max-width: 768px;
-    }
+    font-weight: 600;
 }
 
 h3 {

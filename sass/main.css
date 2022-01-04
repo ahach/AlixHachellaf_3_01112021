@@ -76,7 +76,7 @@ header.page_menu, main.page_menu, footer.page_menu {
   width: 50px;
   height: 50px;
   border: 10px solid transparent;
-  border-bottom-color: linear-gradient(#FF79DA, #9356DC);
+  border-bottom-color: #9356DC;
   border-radius: 50%;
   top: -10px;
   left: -10px;
@@ -462,18 +462,7 @@ h2 {
 }
 
 .far {
-  font-weight: 1px;
-}
-
-@media all and (max-width: 768px) {
-  body {
-    max-width: 768px;
-  }
-  header,
-  main,
-  footer {
-    max-width: 768px;
-  }
+  font-weight: 600;
 }
 
 h3 {
@@ -535,7 +524,7 @@ h3 {
   text-align: center;
   border-top: solid 3px rgba(195, 199, 193, 0.8);
   text-align: center;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
 }
 
 .slogan .zone_recherche {
@@ -572,10 +561,13 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 90%;
+  margin-left: 10px;
 }
 
 /*caracteristiques du header pour les pages de menu*/
 .header__logo {
+  max-width: 90%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -589,7 +581,8 @@ header {
   float: left;
   color: grey;
   margin-top: 15px;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 2px;
   font-size: 2rem;
 }
 
@@ -705,8 +698,8 @@ header {
   left: 0;
   background-color: #e4d5f6;
   z-index: -1;
-  -webkit-transition: opacity 250ms;
-  transition: opacity 250ms;
+  -webkit-transition: opacity ease-in 250ms;
+  transition: opacity ease-in 250ms;
 }
 
 .restaurants {
@@ -771,7 +764,7 @@ header {
 .restaurants ul li a img {
   border: none;
   border-radius: 20px 20px 20px 20px;
-  border-radius: 30px 30px 0px 0px;
+  border-radius: 20px 20px 0px 0px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -890,7 +883,7 @@ header {
     padding-left: 0;
   }
   .fonctionnement li {
-    width: 80%;
+    width: 90%;
     margin-right: 0;
   }
   .restaurants {
@@ -1058,7 +1051,7 @@ footer a .fas {
   overflow: hidden;
   -webkit-box-shadow: 0px 5px 5px 0px lightgray;
           box-shadow: 0px 5px 5px 0px lightgray;
-  width: 65%;
+  width: 40%;
   cursor: pointer;
 }
 
@@ -1166,10 +1159,6 @@ footer a .fas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   list-style: none;
   padding-left: 0;
 }
@@ -1208,6 +1197,18 @@ footer a .fas {
   .menu .menu-deroulant li {
     margin-left: 0;
     width: 100%;
+  }
+  .sous-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .menu h1 .fa-heart {
+    right: 10px;
   }
 }
 /*# sourceMappingURL=main.css.map */

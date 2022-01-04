@@ -9,11 +9,14 @@ header {
 
     img {
         align-items: center;
+        max-width: 90%; margin-left: 10px;
     }
 }
 
+
 /*caracteristiques du header pour les pages de menu*/
 .header__logo {
+    max-width: 90%;
     justify-content: center;
 
     a {
@@ -23,7 +26,8 @@ header {
             float: left;
             color: grey;
             margin-top: 15px;
-            margin-left: 20px;
+            margin-left: 10px;
+            margin-right: 2px;
             font-size: 2rem;
         }
     }
