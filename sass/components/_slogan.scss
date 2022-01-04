@@ -6,7 +6,7 @@
     text-align: center;
     border-top: solid 3px rgba($color: #c3c7c1, $alpha: 0.8);
     text-align: center;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
 
     .zone_recherche {
         text-align: center;
@@ -21,3 +21,7 @@
             border: none;
             background-color: rgba($color: white, $alpha: 0);
         }}}
+
+        @media all and (max-width: 768px) {
+            .slogan{padding-bottom: 10%;}
+        }

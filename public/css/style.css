@@ -326,7 +326,7 @@ h3 {
   text-align: center;
   border-top: solid 3px rgba(195, 199, 193, 0.8);
   text-align: center;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
 .slogan .zone_recherche {
   text-align: center;
@@ -345,6 +345,11 @@ h3 {
   background-color: rgba(255, 255, 255, 0);
 }
 
+@media all and (max-width: 768px) {
+  .slogan {
+    padding-bottom: 10%;
+  }
+}
 header {
   text-align: center;
 }
