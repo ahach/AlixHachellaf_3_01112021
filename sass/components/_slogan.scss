@@ -1,11 +1,10 @@
 .slogan {
     background-color:rgba($color:#c3c7c1, $alpha: 0.2);
-    @include border;
+    border:none;
     display: flex;
     flex-direction: column; justify-content: space-between;
     text-align: center;
     border-top: solid 3px rgba($color: #c3c7c1, $alpha: 0.8);
-    text-align: center;
     padding-bottom: 5%;
 
     .zone_recherche {
@@ -20,7 +19,8 @@
             color: rgb(66, 61, 61);
             border: none;
             background-color: rgba($color: white, $alpha: 0);
-        }}}
+        }}
+    h1{margin-left: 0;}}
 
         @media all and (max-width: 768px) {
             .slogan{padding-bottom: 10%;}

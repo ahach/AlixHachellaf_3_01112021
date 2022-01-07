@@ -93,6 +93,33 @@ header.page_menu, main.page_menu, footer.page_menu {
           animation-iteration-count: infinite;
 }
 
+/*liste des mixins à utiliser*/
+/*keyframes et specificités sur l'animation du menu déroulant */
+@-webkit-keyframes fadein {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0%;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 100%;
+  }
+}
+@keyframes fadein {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0%;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 100%;
+  }
+}
+
 /*Les animations*/
 @-webkit-keyframes spinner {
   0% {
@@ -261,159 +288,6 @@ header.page_menu, main.page_menu, footer.page_menu {
   }
 }
 
-/*liste des mixins à utiliser*/
-/*keyframes et specificités sur l'animation du menu déroulant */
-@-webkit-keyframes fadein {
-  0% {
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
-    opacity: 0%;
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    opacity: 100%;
-  }
-}
-@keyframes fadein {
-  0% {
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
-    opacity: 0%;
-  }
-  100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-    opacity: 100%;
-  }
-}
-
-/*spécificités du code sur le loading spinner*/
-.animation_chargement::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10001;
-  overflow: hidden;
-  background: #0b0b0b;
-  opacity: 0;
-  -webkit-animation: back 2s forwards;
-          animation: back 2s forwards;
-}
-
-.animation_chargement::after {
-  border: 10px solid black;
-  border-radius: 50%;
-  z-index: 10002;
-  content: "";
-  position: absolute;
-  top: 50%;
-  bottom: 50%;
-  right: 60%;
-  left: 40%;
-  border-top: 20px solid #2c3e50;
-  border-bottom: 20px solid #e74ce7;
-  border-left: 20px solid #9356DC;
-  border-right: 20px solid #99E2D0;
-  width: 250px;
-  height: 250px;
-  margin: auto;
-  animation: spin 2s linear alternate-reverse forwards;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
-    opacity: 1;
-  }
-  40% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-  }
-  60% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
-  }
-  95% {
-    -webkit-transform: translateX(-9999px) rotate(360deg);
-            transform: translateX(-9999px) rotate(360deg);
-  }
-  100% {
-    -webkit-transform: translateX(-9999px) rotate(0deg);
-            transform: translateX(-9999px) rotate(0deg);
-    opacity: 0;
-  }
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
-    opacity: 1;
-  }
-  40% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-  }
-  60% {
-    -webkit-transform: translateX(0) rotate(360deg);
-            transform: translateX(0) rotate(360deg);
-  }
-  95% {
-    -webkit-transform: translateX(-9999px) rotate(360deg);
-            transform: translateX(-9999px) rotate(360deg);
-  }
-  100% {
-    -webkit-transform: translateX(-9999px) rotate(0deg);
-            transform: translateX(-9999px) rotate(0deg);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes back {
-  0% {
-    opacity: 0;
-  }
-  2% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes back {
-  0% {
-    opacity: 0;
-  }
-  2% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 body {
   margin: auto;
   color: black;
@@ -452,7 +326,6 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 40px;
 }
 
 h2 {
@@ -510,7 +383,6 @@ h3 {
 .slogan {
   background-color: rgba(195, 199, 193, 0.2);
   border: none;
-  border-radius: 20px 20px 20px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -523,7 +395,6 @@ h3 {
           justify-content: space-between;
   text-align: center;
   border-top: solid 3px rgba(195, 199, 193, 0.8);
-  text-align: center;
   padding-bottom: 5%;
 }
 
@@ -543,6 +414,10 @@ h3 {
   color: #423d3d;
   border: none;
   background-color: rgba(255, 255, 255, 0);
+}
+
+.slogan h1 {
+  margin-left: 0;
 }
 
 @media all and (max-width: 768px) {
@@ -567,13 +442,10 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 90%;
-  margin-left: 10px;
 }
 
 /*caracteristiques du header pour les pages de menu*/
 .header__logo {
-  max-width: 90%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -593,6 +465,12 @@ header {
 }
 
 /*fin du header pour les pages*/
+@media all and (max-width: 768px) {
+  .header__logo img {
+    max-width: 90%;
+  }
+}
+
 .fonctionnement {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -613,6 +491,7 @@ header {
 
 .fonctionnement h1 {
   padding-bottom: 20px;
+  margin-left: 20px;
 }
 
 .fonctionnement ul {
@@ -720,6 +599,10 @@ header {
   background-color: rgba(195, 199, 193, 0.2);
 }
 
+.restaurants h1 {
+  margin-left: 20px;
+}
+
 .restaurants ul {
   list-style-type: none;
   display: -webkit-box;
@@ -740,7 +623,7 @@ header {
   background-color: white;
   width: 40%;
   margin-right: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border: none;
   border-radius: 20px 20px 20px 20px;
 }
