@@ -665,7 +665,7 @@ footer a .fas {
   width: 40%;
   cursor: pointer;
 }
-.menu .menu-deroulant li:hover > .caption p,
+.menu .menu-deroulant li:hover > .caption span,
 .menu .menu-deroulant li:hover p {
   text-overflow: ellipsis;
 }
@@ -708,9 +708,6 @@ footer a .fas {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
   flex: 1;
   padding-left: 10px;
   margin: 0;
@@ -718,6 +715,11 @@ footer a .fas {
 }
 .menu p span {
   font-weight: 600;
+  max-width: 300px;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   color: #615d5d;
   font-size: 0.9em;
 }
@@ -746,6 +748,10 @@ footer a .fas {
 .sous-menu__caption--3 {
   animation: fadein 2s forwards;
   animation-delay: 4.5s;
+}
+.sous-menu__caption--4 {
+  animation: fadein 2s forwards;
+  animation-delay: 6s;
 }
 
 .green_line {
